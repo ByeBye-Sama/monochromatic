@@ -7,7 +7,7 @@ const metadata = {
 }
 
 export const Normal = () => {
-  const value = text('value', 'Welcome')
+  const value = text('value', 'Placeholder')
 
   const textStyle = text('textStyle', 'h1')
 

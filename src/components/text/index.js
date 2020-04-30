@@ -4,7 +4,7 @@ import theme from 'theme'
 const resolveColor = props => {
   const { color } = props
 
-  return theme.colors[color || 'black']
+  return theme.colors[color || 'primary']
 }
 
 const resolveTextStyle = props => {
@@ -26,8 +26,9 @@ const resolveTextAlign = props => {
   `
 }
 
-const Text = styled.span`
+const Text = styled.div`
   color: ${resolveColor};
+  display: inline-block;
   text-decoration: none;
 
   ${resolveTextAlign}

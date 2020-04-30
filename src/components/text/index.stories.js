@@ -1,6 +1,8 @@
 import React from 'react'
-import { text } from '@storybook/addon-knobs'
+import { text, select } from '@storybook/addon-knobs'
 import Text from './index'
+import { keys } from 'lodash'
+import theme from 'theme'
 
 const metadata = {
   title: 'Theme|Text'
@@ -9,11 +11,11 @@ const metadata = {
 export const Normal = () => {
   const value = text('value', 'Placeholder')
 
-  const textStyle = text('textStyle', 'h1')
+  const color = select('color', keys(theme.colors))
 
-  const textAlign = text('textAlign', 'center')
+  const textStyle = select('textStyle', keys(theme.textStyles))
 
-  const color = text('color', 'black')
+  const textAlign = select('textAlign', ['left', 'center', 'right'])
 
   return (
     <Text textStyle={textStyle} color={color} textAlign={textAlign}>

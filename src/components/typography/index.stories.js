@@ -11,7 +11,7 @@ const metadata = {
 export const Normal = () => {
   const value = text('value', 'Placeholder')
 
-  const color = select('color', keys(theme.palette), 'black')
+  const color = select('color', keys(theme.palette), 'secondary')
 
   const variant = select('variant', keys(theme.textStyles), 'h1')
 

@@ -11,7 +11,7 @@ const metadata = {
 }
 
 const StyledBox = styled(Box)`
-  height: 200px;
+  height: 100px;
 `
 
 export const Normal = () => {
@@ -23,11 +23,11 @@ export const Normal = () => {
 
   const alignItems = text('alignItems', 'center')
 
-  const background = select('background', keys(theme.palette), 'primary')
+  const background = select('background', keys(theme.palette), 'secondary')
 
   const rounded = boolean('rounded', false)
 
-  const color = select('color', keys(theme.palette), 'white')
+  const color = select('color', keys(theme.palette), 'lightgray')
 
   return (
     <StyledBox

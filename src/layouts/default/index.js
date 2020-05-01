@@ -5,7 +5,7 @@ import { Text } from 'components'
 
 export const Main = styled.main`
   align-items: center;
-  background-color: ${theme.colors.black};
+  background-color: ${theme.palette.black};
   display: flex;
   flex-direction: column;
   height: 100vh;

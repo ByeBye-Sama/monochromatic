@@ -1,11 +1,13 @@
 import { isString } from 'lodash'
 
 const theme = {
-  colors: {
-    primary: 'red',
-    secondary: 'blue',
-    white: 'white',
-    black: 'black'
+  palette: {
+    primary: '#333333',
+    secondary: '#666666',
+    lightgray: '#D3D3D3',
+    darkgray: '#A9A9A9',
+    white: '#FFFFFF',
+    black: '#000000'
   },
   spacing: (...args) => {
     return args.map(item => (isString(item) ? item : `${8 * item}px`)).join(' ')

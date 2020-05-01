@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@storybook/addon-actions": "^5.3.12",
+    "@storybook/addon-backgrounds": "^5.3.18",
     "@storybook/addon-knobs": "^5.3.12",
     "@storybook/react": "^5.3.12",
     "@storybook/theming": "^5.3.12",

@@ -1,8 +1,8 @@
 {
-  "name": "next-boilerplate",
+  "name": "byebye-website",
   "version": "1.0.0",
-  "author": "KayPacha",
-  "description": "Next boilerplate",
+  "author": "ByeBye-Sama",
+  "description": "Personal website",
   "main": "index.js",
   "scripts": {
     "dev": "node server",

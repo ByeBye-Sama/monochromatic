@@ -15,30 +15,58 @@ const theme = {
   textStyles: {
     body1: {
       fontWeight: 400,
-      fontSize: '14px',
-      lineHeight: '21px'
+      fontSize: '18px',
+      lineHeight: '27px',
+      fontFamily: 'Patrick Hand, sans-serif'
+    },
+    body2: {
+      fontWeight: 400,
+      fontSize: '16px',
+      lineHeight: '24px',
+      fontFamily: 'Patrick Hand, sans-serif'
     },
     h1: {
       fontWeight: 600,
-      fontSize: '24px',
-      lineHeight: '32px'
+      fontSize: '36px',
+      lineHeight: '54px',
+      fontFamily: 'Patrick Hand SC, sans-serif'
     },
     h2: {
       fontWeight: 600,
-      fontSize: '18px',
-      lineHeight: '24px'
+      fontSize: '32px',
+      lineHeight: '48px',
+      fontFamily: 'Patrick Hand SC, sans-serif'
     },
-    title: {
-      fontWeight: 400,
+    h3: {
+      fontWeight: 600,
+      fontSize: '28px',
+      lineHeight: '42px',
+      fontFamily: 'Patrick Hand SC, sans-serif'
+    },
+    h4: {
+      fontWeight: 600,
+      fontSize: '24px',
+      lineHeight: '36px',
+      fontFamily: 'Patrick Hand SC, sans-serif'
+    },
+    h5: {
+      fontWeight: 600,
+      fontSize: '20px',
+      lineHeight: '30px',
+      fontFamily: 'Patrick Hand SC, sans-serif'
+    },
+    h6: {
+      fontWeight: 600,
       fontSize: '16px',
-      lineHeight: '24px'
+      lineHeight: '24px',
+      fontFamily: 'Patrick Hand SC, sans-serif'
     }
   },
   textStyle: style => `
     font-size: ${theme.textStyles[style].fontSize};
     font-weight: ${theme.textStyles[style].fontWeight};
     line-height: ${theme.textStyles[style].lineHeight};
-    font-family: Open Sans,sans-serif;
+    font-family: ${theme.textStyles[style].fontFamily};
   `
 }
 

@@ -39,6 +39,10 @@ class KayPachaDocument extends Document {
             name="viewport"
             content="initial-scale=1.0, width=device-width"
           />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Patrick+Hand+SC&display=swap"
+            rel="stylesheet"
+          />
 
           <link
             rel="icon"

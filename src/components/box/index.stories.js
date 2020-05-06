@@ -7,11 +7,12 @@ import Box from './index'
 import Typography from 'components/typography'
 
 const metadata = {
-  title: 'Theme|Box'
+  title: 'Layout|Box'
 }
 
 const StyledBox = styled(Box)`
-  height: 100px;
+  min-height: 100px;
+  padding: ${theme.spacing(2, 5)};
 `
 
 export const Normal = () => {

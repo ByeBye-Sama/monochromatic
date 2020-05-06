@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import theme from 'theme'
-import { Text } from 'components'
+import { Typography } from 'components'
 
 export const Main = styled.main`
   align-items: center;
@@ -21,9 +21,9 @@ const DefaultLayout = props => {
 
   return (
     <Main id="main">
-      <Text color="white" textStyle="h2">
+      <Typography color="white" variant="h2">
         Boilerplate by KayPacha
-      </Text>
+      </Typography>
       {children}
     </Main>
   )

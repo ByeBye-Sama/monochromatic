@@ -5,7 +5,7 @@ import theme from 'theme'
 import Typography from './index'
 
 const metadata = {
-  title: 'Theme|Typography'
+  title: 'Data Display|Typography'
 }
 
 export const Normal = () => {

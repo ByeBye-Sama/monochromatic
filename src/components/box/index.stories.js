@@ -2,17 +2,16 @@ import React from 'react'
 import { keys } from 'lodash'
 import styled from 'styled-components'
 import { text, select, boolean } from '@storybook/addon-knobs'
-import theme from 'theme'
+import { theme } from 'theme'
+import { Typography } from 'components'
 import Box from './index'
-import Typography from 'components/typography'
 
 const metadata = {
   title: 'Layout|Box'
 }
 
 const StyledBox = styled(Box)`
-  min-height: 100px;
-  padding: ${theme.spacing(2, 5)};
+  min-height: ${theme.spacing(12)};
 `
 
 export const Normal = () => {
@@ -24,7 +23,7 @@ export const Normal = () => {
 
   const alignItems = text('alignItems', 'center')
 
-  const background = select('background', keys(theme.palette), 'secondary')
+  const background = select('background', keys(theme.palette), 'primary')
 
   const rounded = boolean('rounded', false)
 

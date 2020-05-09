@@ -1,6 +1,15 @@
-import { isString } from 'lodash'
+import { isString, keys, reduce } from 'lodash'
+import { css } from 'styled-components'
 
-const theme = {
+export const breakpoints = {
+  xs: 360,
+  sm: 600,
+  md: 960,
+  lg: 1280,
+  xl: 1920
+}
+
+export const theme = {
   palette: {
     primary: '#333333',
     secondary: '#666666',
@@ -12,6 +21,18 @@ const theme = {
   spacing: (...args) => {
     return args.map(item => (isString(item) ? item : `${8 * item}px`)).join(' ')
   },
+  breakpoint: reduce(
+    keys(breakpoints),
+    (accumulator, label) => {
+      accumulator[label] = (...args) => css`
+        @media (max-width: ${breakpoints[label]}px) {
+          ${css(...args)};
+        }
+      `
+      return accumulator
+    },
+    {}
+  ),
   textStyles: {
     body1: {
       fontWeight: 400,
@@ -69,5 +90,3 @@ const theme = {
     font-family: ${theme.textStyles[style].fontFamily};
   `
 }
-
-export default theme

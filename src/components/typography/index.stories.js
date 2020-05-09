@@ -1,7 +1,7 @@
 import React from 'react'
 import { keys } from 'lodash'
 import { text, select } from '@storybook/addon-knobs'
-import theme from 'theme'
+import { theme } from 'theme'
 import Typography from './index'
 
 const metadata = {
@@ -11,7 +11,7 @@ const metadata = {
 export const Normal = () => {
   const value = text('value', 'Placeholder')
 
-  const color = select('color', keys(theme.palette), 'secondary')
+  const color = select('color', keys(theme.palette), 'primary')
 
   const variant = select('variant', keys(theme.textStyles), 'h1')
 

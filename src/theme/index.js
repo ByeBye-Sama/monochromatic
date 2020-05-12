@@ -1,5 +1,6 @@
-import { isString, keys, reduce } from 'lodash'
 import { css } from 'styled-components'
+import { tint, shade } from 'polished'
+import { isString, keys, reduce } from 'lodash'
 
 export const breakpoints = {
   xs: 360,
@@ -9,13 +10,18 @@ export const breakpoints = {
   xl: 1920
 }
 
+const primaryColor = '#A9A9A9'
+
 export const theme = {
   palette: {
-    primary: '#333333',
-    secondary: '#666666',
-    lightgray: '#D3D3D3',
-    darkgray: '#A9A9A9',
     white: '#FFFFFF',
+    tint3: tint(0.75, primaryColor),
+    tint2: tint(0.5, primaryColor),
+    tint1: tint(0.25, primaryColor),
+    primary: primaryColor,
+    shade1: shade(0.25, primaryColor),
+    shade2: shade(0.5, primaryColor),
+    shade3: shade(0.75, primaryColor),
     black: '#000000'
   },
   spacing: (...args) => {

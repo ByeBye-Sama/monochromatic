@@ -23,11 +23,11 @@ export const Normal = () => {
 
   const alignItems = text('alignItems', 'center')
 
-  const background = select('background', keys(theme.palette), 'primary')
+  const background = select('background', keys(theme.palette), 'shade3')
 
   const rounded = boolean('rounded', false)
 
-  const color = select('color', keys(theme.palette), 'lightgray')
+  const color = select('color', keys(theme.palette), 'tint2')
 
   return (
     <StyledBox

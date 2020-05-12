@@ -23,12 +23,12 @@ const MediaBox = props => {
   return (
     <Box
       display="flex"
-      background="primary"
+      background="shade3"
       alignItems="center"
       justifyContent="center"
       rounded
     >
-      <Typography variant="h3" color="lightgray">
+      <Typography variant="h3" color="tint2">
         {value}
       </Typography>
     </Box>
@@ -38,15 +38,13 @@ const MediaBox = props => {
 export const Normal = () => {
   return (
     <>
-      <Typography variant="h1" color="primary" align="center">
+      <Typography variant="h1" color="shade3" align="center">
         Hide on ...
       </Typography>
       <StyledBox
         display="flex"
-        background="secondary"
         alignItems="center"
         justifyContent="space-between"
-        rounded
       >
         <Hidden xs>
           <MediaBox value="xs" />

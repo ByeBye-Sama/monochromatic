@@ -4,7 +4,7 @@ import { theme } from 'theme'
 const resolveColor = props => {
   const { color } = props
 
-  return theme.palette[color || 'primary']
+  return theme.palette[color || 'shade3']
 }
 
 const resolveVariant = props => {

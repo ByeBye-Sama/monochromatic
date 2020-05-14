@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { isPlainObject } from 'lodash'
 import { theme } from 'theme'
 
 const resolveBackground = props => {
@@ -6,6 +7,14 @@ const resolveBackground = props => {
 
   if (!background) {
     return ''
+  }
+
+  if (isPlainObject(background)) {
+    const { from, to, direction } = background
+
+    return `background-image: linear-gradient(to ${direction || 'right'}, ${
+      theme.palette[from || 'primary']
+    } 0%, ${theme.palette[to || 'primary00']} 100%);`
   }
 
   return `

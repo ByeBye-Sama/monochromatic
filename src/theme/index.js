@@ -23,7 +23,7 @@ export const theme = {
     shade2: shade(0.5, primaryColor),
     shade3: shade(0.75, primaryColor),
     black: '#000000',
-    primary0: transparentize(1, primaryColor),
+    primary00: transparentize(1, primaryColor),
     primary25: transparentize(0.75, primaryColor),
     primary50: transparentize(0.5, primaryColor),
     primary75: transparentize(0.25, primaryColor)

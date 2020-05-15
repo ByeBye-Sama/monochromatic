@@ -1,6 +1,6 @@
 import { css } from 'styled-components'
-import { tint, shade } from 'polished'
 import { isString, keys, reduce } from 'lodash'
+import { tint, shade, transparentize } from 'polished'
 
 export const breakpoints = {
   xs: 360,
@@ -22,7 +22,11 @@ export const theme = {
     shade1: shade(0.25, primaryColor),
     shade2: shade(0.5, primaryColor),
     shade3: shade(0.75, primaryColor),
-    black: '#000000'
+    black: '#000000',
+    primary00: transparentize(1, primaryColor),
+    primary25: transparentize(0.75, primaryColor),
+    primary50: transparentize(0.5, primaryColor),
+    primary75: transparentize(0.25, primaryColor)
   },
   spacing: (...args) => {
     return args.map(item => (isString(item) ? item : `${8 * item}px`)).join(' ')

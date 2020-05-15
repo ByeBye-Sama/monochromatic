@@ -1,6 +1,6 @@
 import { css } from 'styled-components'
-import { tint, shade, transparentize } from 'polished'
 import { isString, keys, reduce } from 'lodash'
+import { tint, shade, transparentize } from 'polished'
 
 export const breakpoints = {
   xs: 360,

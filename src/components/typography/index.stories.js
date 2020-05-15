@@ -1,6 +1,6 @@
 import React from 'react'
 import { keys } from 'lodash'
-import { text, select } from '@storybook/addon-knobs'
+import { text, select, object } from '@storybook/addon-knobs'
 import { theme } from 'theme'
 import Typography from './index'
 
@@ -19,6 +19,24 @@ export const Normal = () => {
 
   return (
     <Typography variant={variant} color={color} align={align}>
+      {value}
+    </Typography>
+  )
+}
+
+export const Gradient = () => {
+  const defaultValue = {
+    from: 'shade3',
+    to: 'primary00',
+    direction: 'right'
+  }
+
+  const color = object('background', defaultValue)
+
+  const value = text('value', 'Placeholder')
+
+  return (
+    <Typography variant="h1" color={color}>
       {value}
     </Typography>
   )

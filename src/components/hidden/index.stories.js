@@ -21,13 +21,7 @@ const MediaBox = props => {
   const { value } = props
 
   return (
-    <Box
-      display="flex"
-      background="shade3"
-      alignItems="center"
-      justifyContent="center"
-      rounded
-    >
+    <Box center background="shade3" rounded>
       <Typography variant="h3" color="tint2">
         {value}
       </Typography>

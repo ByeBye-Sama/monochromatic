@@ -12,9 +12,11 @@ const resolveBackground = props => {
   if (isPlainObject(background)) {
     const { from, to, direction } = background
 
-    return `background-image: linear-gradient(to ${direction || 'right'}, ${
+    return `
+      background-image: linear-gradient(to ${direction || 'right'}, ${
       theme.palette[from || 'primary']
-    } 0%, ${theme.palette[to || 'primary00']} 100%);`
+    } 0%, ${theme.palette[to || 'primary00']} 100%);
+    `
   }
 
   return `
@@ -66,12 +68,27 @@ const resolveDisplay = props => {
   `
 }
 
+const isCenter = props => {
+  const { center } = props
+
+  if (!center) {
+    return ''
+  }
+
+  return `
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  `
+}
+
 const Box = styled.div`
   width: 100%;
   ${resolveRounded}
   ${resolveDisplay}
   ${resolveTextAlign}
   ${resolveBackground}
+  ${isCenter}
 `
 
 export default Box

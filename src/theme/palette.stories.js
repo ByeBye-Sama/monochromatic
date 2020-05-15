@@ -135,7 +135,8 @@ export const Normal = () => {
     primary75: transparentize(0.25, primaryColor)
   }
 
-  //re-render when primaryColor change
+  // Knobs don't handle dynamic default value, change it when it works
+  // https://github.com/storybookjs/storybook/issues/8376
   const fromColor = select('from', palette, palette.primary)
 
   const toColor = select('to', palette, palette.primary00)

@@ -22,18 +22,15 @@ const directions = [
 ]
 
 const Container = styled(Box)`
-  align-items: center;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
 `
 
-const StyledBox = styled(Container)`
+const SolidContainer = styled(Container)`
   background-color: ${props => props.bgColor};
   padding: ${theme.spacing(2, 0)};
 `
 
-const InnerBox = styled(Container)`
+const GradientContainer = styled(Container)`
   background-image: linear-gradient(
     to ${props => props.bgColor.direction},
     ${props => props.bgColor.from} 0%,
@@ -43,10 +40,6 @@ const InnerBox = styled(Container)`
 `
 
 const TextBox = styled(Box)`
-  align-items: center;
-  display: flex;
-  justify-content: center;
-
   > :not(:last-child) {
     margin-right: ${theme.spacing(2)};
   }
@@ -80,11 +73,11 @@ const ColorBox = props => {
   const renderValue = resolveColor(value)
 
   return (
-    <StyledBox bgColor={renderColor}>
+    <SolidContainer center bgColor={renderColor}>
       <StyledTypography variant="h5" textColor={textColor}>
         {label}
       </StyledTypography>
-      <TextBox>
+      <TextBox center>
         <StyledTypography variant="body1" textColor={textColor}>
           {value ? toUpper(renderValue) : toUpper(renderColor)}
         </StyledTypography>
@@ -94,7 +87,7 @@ const ColorBox = props => {
           </StyledTypography>
         )}
       </TextBox>
-    </StyledBox>
+    </SolidContainer>
   )
 }
 
@@ -108,11 +101,11 @@ const GradiantBox = props => {
   const textColor = readableColor(mixColor)
 
   return (
-    <InnerBox bgColor={bgColor}>
+    <GradientContainer center bgColor={bgColor}>
       <StyledTypography variant="h5" textColor={textColor}>
         GRADIANT TO {toUpper(direction)}
       </StyledTypography>
-    </InnerBox>
+    </GradientContainer>
   )
 }
 

@@ -1,6 +1,7 @@
 import { css } from 'styled-components'
 import { isString, keys, reduce } from 'lodash'
 import { tint, shade, transparentize } from 'polished'
+import { boxShadow } from 'utils'
 
 export const breakpoints = {
   xs: 360,
@@ -10,7 +11,7 @@ export const breakpoints = {
   xl: 1920
 }
 
-const primaryColor = '#A9A9A9'
+export const primaryColor = '#29AC9C'
 
 export const theme = {
   palette: {
@@ -26,7 +27,10 @@ export const theme = {
     primary00: transparentize(1, primaryColor),
     primary25: transparentize(0.75, primaryColor),
     primary50: transparentize(0.5, primaryColor),
-    primary75: transparentize(0.25, primaryColor)
+    primary75: transparentize(0.25, primaryColor),
+    disabled: '#DCDCDC',
+    borderDisabled: '#D3D3D3',
+    textDisabled: '#A0A0A0'
   },
   spacing: (...args) => {
     return args.map(item => (isString(item) ? item : `${8 * item}px`)).join(' ')
@@ -98,5 +102,6 @@ export const theme = {
     font-weight: ${theme.textStyles[style].fontWeight};
     line-height: ${theme.textStyles[style].lineHeight};
     font-family: ${theme.textStyles[style].fontFamily};
-  `
+  `,
+  boxShadow: depth => boxShadow(depth)
 }

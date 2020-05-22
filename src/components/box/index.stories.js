@@ -1,11 +1,11 @@
 import React from 'react'
 import { keys } from 'lodash'
 import styled from 'styled-components'
-import { readableColor } from 'polished'
 import { text, select, boolean, object } from '@storybook/addon-knobs'
 import { theme } from 'theme'
 import { Typography } from 'components'
 import Box from './index'
+import { readableTextColor } from 'utils'
 
 const metadata = {
   title: 'Layout|Box'
@@ -18,7 +18,7 @@ const StyledBox = styled(Box)`
 `
 
 export const Normal = () => {
-  const background = select('background', keys(theme.palette), 'shade3')
+  const color = select('color', keys(theme.palette), 'primary')
 
   const center = boolean('center', false)
 
@@ -32,18 +32,16 @@ export const Normal = () => {
 
   const value = text('text', 'Placeholder')
 
-  const color = readableColor(theme.palette[background])
-
-  const textColor = color === '#fff' ? 'white' : 'black'
+  const textColor = readableTextColor(color)
 
   return (
     <StyledBox
+      color={color}
       center={center}
+      rounded={rounded}
       display={display}
-      background={background}
       alignItems={alignItems}
       justifyContent={justifyContent}
-      rounded={rounded}
     >
       <Typography variant="h1" color={textColor}>
         {value}
@@ -54,14 +52,14 @@ export const Normal = () => {
 
 export const Gradient = () => {
   const defaultValue = {
-    from: 'shade3',
-    to: 'primary00',
+    from: 'shade1',
+    to: 'primary75',
     direction: 'right bottom'
   }
 
-  const background = object('background', defaultValue)
+  const color = object('color', defaultValue)
 
-  return <StyledBox background={background} />
+  return <StyledBox color={color} />
 }
 
 export default metadata

@@ -11,7 +11,7 @@ const metadata = {
 export const Normal = () => {
   const value = text('value', 'Placeholder')
 
-  const color = select('color', keys(theme.palette), 'shade3')
+  const color = select('color', keys(theme.palette), 'primary')
 
   const variant = select('variant', keys(theme.textStyles), 'h1')
 
@@ -27,11 +27,11 @@ export const Normal = () => {
 export const Gradient = () => {
   const defaultValue = {
     from: 'shade3',
-    to: 'primary00',
+    to: 'tint1',
     direction: 'right'
   }
 
-  const color = object('background', defaultValue)
+  const color = object('color', defaultValue)
 
   const value = text('value', 'Placeholder')
 

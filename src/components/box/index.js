@@ -2,15 +2,15 @@ import styled from 'styled-components'
 import { isPlainObject } from 'lodash'
 import { theme } from 'theme'
 
-const resolveBackground = props => {
-  const { background } = props
+const resolveColor = props => {
+  const { color } = props
 
-  if (!background) {
+  if (!color) {
     return ''
   }
 
-  if (isPlainObject(background)) {
-    const { from, to, direction } = background
+  if (isPlainObject(color)) {
+    const { from, to, direction } = color
 
     return `
       background-image: linear-gradient(to ${direction || 'right'}, ${
@@ -20,7 +20,7 @@ const resolveBackground = props => {
   }
 
   return `
-    background-color: ${theme.palette[background || 'primary']};
+    background-color: ${theme.palette[color || 'primary']};
   `
 }
 
@@ -87,7 +87,7 @@ const Box = styled.div`
   ${resolveRounded}
   ${resolveDisplay}
   ${resolveTextAlign}
-  ${resolveBackground}
+  ${resolveColor}
   ${isCenter}
 `
 

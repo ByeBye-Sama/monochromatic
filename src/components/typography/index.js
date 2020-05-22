@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { isPlainObject } from 'lodash'
 import { theme } from 'theme'
+import { colorExists } from 'utils'
 
 const resolveColor = props => {
   const { color } = props
@@ -8,14 +9,19 @@ const resolveColor = props => {
   if (isPlainObject(color)) {
     const { from, to, direction } = color
 
+    const fromColor = theme.palette[colorExists(from, 'primary')]
+
+    const toColor = theme.palette[colorExists(to, 'primary00')]
+
     return `
-      background: linear-gradient(to ${direction}, ${theme.palette[from]} 0%, ${theme.palette[to]} 100%);
+      background: linear-gradient(to ${direction ||
+        'right'}, ${fromColor} 0%, ${toColor} 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     `
   }
 
-  return `color: ${theme.palette[color || 'shade3']};`
+  return `color: ${theme.palette[color || 'black']};`
 }
 
 const resolveVariant = props => {

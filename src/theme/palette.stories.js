@@ -4,7 +4,7 @@ import { toUpper, startsWith } from 'lodash'
 import { color, select } from '@storybook/addon-knobs'
 import { rgba, tint, shade, readableColor, transparentize, mix } from 'polished'
 import { Typography, Box } from 'components'
-import { theme } from './index'
+import { theme, primaryColor } from './index'
 
 const metadata = {
   title: 'Theme|Palette'
@@ -110,22 +110,22 @@ const GradiantBox = props => {
 }
 
 export const Normal = () => {
-  const primaryColor = color('primaryColor', '#A9A9A9')
+  const primary = color('primaryColor', primaryColor)
 
   const palette = {
     white: '#ffffff',
-    tint3: tint(0.75, primaryColor),
-    tint2: tint(0.5, primaryColor),
-    tint1: tint(0.25, primaryColor),
-    primary: primaryColor,
-    shade1: shade(0.25, primaryColor),
-    shade2: shade(0.5, primaryColor),
-    shade3: shade(0.75, primaryColor),
+    tint3: tint(0.75, primary),
+    tint2: tint(0.5, primary),
+    tint1: tint(0.25, primary),
+    primary,
+    shade1: shade(0.25, primary),
+    shade2: shade(0.5, primary),
+    shade3: shade(0.75, primary),
     black: '#000000',
-    primary00: transparentize(1, primaryColor),
-    primary25: transparentize(0.75, primaryColor),
-    primary50: transparentize(0.5, primaryColor),
-    primary75: transparentize(0.25, primaryColor)
+    primary00: transparentize(1, primary),
+    primary25: transparentize(0.75, primary),
+    primary50: transparentize(0.5, primary),
+    primary75: transparentize(0.25, primary)
   }
 
   // Knobs don't handle dynamic default value, change it when it works

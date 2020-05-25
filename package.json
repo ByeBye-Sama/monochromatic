@@ -17,6 +17,7 @@
   "keywords": [],
   "license": "ISC",
   "dependencies": {
+    "babel-loader": "^8.1.0",
     "final-form": "^4.18.7",
     "global": "^4.4.0",
     "lodash": "^4.17.15",
@@ -25,12 +26,14 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-final-form": "^6.3.5",
+    "react-is": "^16.13.1",
     "styled-components": "^5.0.1",
     "styled-reset": "^4.1.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^5.3.12",
     "@storybook/addon-backgrounds": "^5.3.18",
+    "@storybook/addon-docs": "^5.3.18",
     "@storybook/addon-knobs": "^5.3.12",
     "@storybook/addon-viewport": "^5.3.18",
     "@storybook/react": "^5.3.12",

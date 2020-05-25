@@ -1,3 +1,5 @@
+import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { isPlainObject } from 'lodash'
 import { theme } from 'theme'
@@ -82,7 +84,7 @@ const isCenter = props => {
   `
 }
 
-const Box = styled.div`
+const Container = styled.div`
   width: 100%;
   ${resolveRounded}
   ${resolveDisplay}
@@ -90,5 +92,27 @@ const Box = styled.div`
   ${resolveColor}
   ${isCenter}
 `
+
+const Box = props => <Container {...props} />
+
+Box.propTypes = {
+  /**
+   * String representing the value of this component.
+   * Should be a JSON encoded array of each element
+   */
+  color: PropTypes.oneOfType([
+    PropTypes.oneOfType(['primary', 'etc']),
+    PropTypes.object
+  ]),
+  center: PropTypes.bool,
+  rounded: PropTypes.bool,
+  display: PropTypes.string,
+  alignItems: PropTypes.string,
+  justifyContent: PropTypes.string
+}
+
+Box.defaultProps = {
+  color: 'primary'
+}
 
 export default Box

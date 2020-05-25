@@ -8,7 +8,8 @@ import Box from './index'
 import { readableTextColor } from 'utils'
 
 const metadata = {
-  title: 'Layout|Box'
+  title: 'Layout|Box',
+  includeStories: []
 }
 
 const StyledBox = styled(Box)`

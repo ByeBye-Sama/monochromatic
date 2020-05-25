@@ -1,0 +1,29 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import * as stories from './index.stories.js'
+import { Normal } from './index.stories.js'
+import Box from './index'
+
+<Meta title="Layout|Box" />
+
+# Box
+
+Testing `MDX` docs with `CSF` stories.
+
+## Normal
+
+<Preview>
+  <Story name="Normal">{stories.Normal()}</Story>
+</Preview>
+
+### Props
+
+<Props story="Normal" />
+
+This is just an example waiting for [Storybook 6.0](https://github.com/storybookjs/storybook/milestone/25)
+to fix `Show Code` issue
+
+## Gradient
+
+<Preview>
+  <Story name="Gradient">{stories.Gradient()}</Story>
+</Preview>

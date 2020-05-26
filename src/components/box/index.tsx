@@ -10,7 +10,7 @@ interface BoxProps {
    * If you want to use gradient use and object with `from`, `to` and `direction` inside.
    */
   color?: any
-  children: ReactNode | string
+  children?: ReactNode | string
   center?: boolean
   rounded?: boolean
   display?: string

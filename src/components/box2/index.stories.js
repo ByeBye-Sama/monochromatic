@@ -4,15 +4,15 @@ import styled from 'styled-components'
 import { text, select, boolean, object } from '@storybook/addon-knobs'
 import { theme } from 'theme'
 import { Typography } from 'components'
-import Box from './index'
+import Box2 from './index'
 import { readableTextColor } from 'utils'
 
 const metadata = {
-  title: 'Layout|Box',
+  title: 'Layout|Box2',
   includeStories: []
 }
 
-const StyledBox = styled(Box)`
+const StyledBox = styled(Box2)`
   min-height: ${theme.spacing(15)};
   padding: ${theme.spacing(0, 2)};
   width: calc(100% - ${theme.spacing(4)});

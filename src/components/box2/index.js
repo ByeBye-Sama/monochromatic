@@ -93,9 +93,9 @@ const Container = styled.div`
   ${isCenter}
 `
 
-const Box = props => <Container {...props} />
+const Box2 = props => <Container {...props} />
 
-Box.propTypes = {
+Box2.propTypes = {
   /**
    * String representing the value of this component.
    * Should be a JSON encoded array of each element
@@ -111,8 +111,8 @@ Box.propTypes = {
   justifyContent: PropTypes.string
 }
 
-Box.defaultProps = {
+Box2.defaultProps = {
   color: 'primary'
 }
 
-export default Box
+export default Box2

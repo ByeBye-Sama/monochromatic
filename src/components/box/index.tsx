@@ -2,7 +2,6 @@ import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import { isPlainObject } from 'lodash'
 import { theme } from 'theme'
-import { PaletteTypes } from 'types'
 
 interface BoxProps {
   /**
@@ -10,7 +9,7 @@ interface BoxProps {
    * If you want to use gradient use and object with `from`, `to` and `direction` inside.
    */
   color?: any
-  children?: ReactNode | string
+  children?: ReactNode
   center?: boolean
   rounded?: boolean
   display?: string

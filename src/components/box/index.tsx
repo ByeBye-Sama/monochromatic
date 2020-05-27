@@ -4,20 +4,20 @@ import { isPlainObject } from 'lodash'
 import { theme } from 'theme'
 
 interface BoxProps {
+  alignItems?: string
+  center?: boolean
+  children?: ReactNode
   /**
    * For solid color use a string.
    * If you want to use gradient use and object with `from`, `to` and `direction` inside.
    */
   color?: any
-  children?: ReactNode
-  center?: boolean
-  rounded?: boolean
   display?: string
-  alignItems?: string
   justifyContent?: string
+  rounded?: boolean
 }
 
-const resolveColor = props => {
+const resolveColor = (props: BoxProps) => {
   const { color } = props
 
   if (!color) {
@@ -39,19 +39,7 @@ const resolveColor = props => {
   `
 }
 
-const resolveTextAlign = props => {
-  const { textAlign } = props
-
-  if (!textAlign) {
-    return ''
-  }
-
-  return `
-    text-align: ${textAlign}; 
-  `
-}
-
-const resolveRounded = props => {
+const resolveRounded = (props: BoxProps) => {
   const { rounded } = props
 
   if (!rounded) {
@@ -63,7 +51,7 @@ const resolveRounded = props => {
   `
 }
 
-const resolveDisplay = props => {
+const resolveDisplay = (props: BoxProps) => {
   const { display, justifyContent, alignItems } = props
 
   if (!display) {
@@ -83,7 +71,7 @@ const resolveDisplay = props => {
   `
 }
 
-const isCenter = props => {
+const isCenter = (props: BoxProps) => {
   const { center } = props
 
   if (!center) {
@@ -101,11 +89,20 @@ const Container = styled.div`
   width: 100%;
   ${resolveRounded}
   ${resolveDisplay}
-  ${resolveTextAlign}
   ${resolveColor}
   ${isCenter}
 `
 
 const Box = (props: BoxProps) => <Container {...props} />
+
+Box.defaultProps = {
+  alignItems: null,
+  center: false,
+  children: null,
+  color: null,
+  display: null,
+  justifyContent: null,
+  rounded: false
+}
 
 export default Box

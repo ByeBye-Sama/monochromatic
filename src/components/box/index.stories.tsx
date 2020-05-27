@@ -4,8 +4,8 @@ import styled from 'styled-components'
 import { text, select, boolean, object } from '@storybook/addon-knobs'
 import { theme } from 'theme'
 import { Typography } from 'components'
-import Box from './index'
 import { readableTextColor } from 'utils'
+import Box from './index'
 
 const metadata = {
   title: 'Layout|Box',
@@ -44,7 +44,9 @@ export const Normal = () => {
       alignItems={alignItems}
       justifyContent={justifyContent}
     >
-      test
+      <Typography variant="h1" color={textColor}>
+        {value}
+      </Typography>
     </StyledBox>
   )
 }

@@ -17,7 +17,6 @@
   "keywords": [],
   "license": "ISC",
   "dependencies": {
-    "@types/styled-components": "^5.1.0",
     "babel-loader": "^8.1.0",
     "final-form": "^4.18.7",
     "global": "^4.4.0",
@@ -42,6 +41,7 @@
     "@storybook/react": "^5.3.12",
     "@storybook/theming": "^5.3.12",
     "@types/node": "^14.0.5",
+    "@types/styled-components": "^5.1.0",
     "babel-eslint": "^10.0.3",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-styled-components": "^1.10.7",

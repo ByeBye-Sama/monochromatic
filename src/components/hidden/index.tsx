@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import { breakpoints } from 'theme'
 import { useWindowDimensions } from 'hooks'
+
+interface HiddenProps {
+  children?: ReactNode
+  lg?: boolean
+  md?: boolean
+  sm?: boolean
+  xl?: boolean
+  xs?: boolean
+}
 
 const Container = styled.span`
   align-items: center;
@@ -10,7 +19,7 @@ const Container = styled.span`
   width: 100%;
 `
 
-const Hidden = props => {
+const Hidden = (props: HiddenProps) => {
   const { xs, sm, md, lg, xl, children } = props
 
   const { width } = useWindowDimensions()
@@ -36,6 +45,15 @@ const Hidden = props => {
   }
 
   return <Container>{children}</Container>
+}
+
+Hidden.defaultProps = {
+  children: null,
+  lg: false,
+  md: false,
+  sm: false,
+  xl: false,
+  xs: false
 }
 
 export default Hidden

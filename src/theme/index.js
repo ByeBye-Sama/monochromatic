@@ -11,7 +11,7 @@ export const breakpoints = {
   xl: 1920
 }
 
-export const primaryColor = '#f00'
+export const primaryColor = '#29AC9C'
 
 export const theme = {
   palette: {

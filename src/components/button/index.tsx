@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { shade, mix, transparentize } from 'polished'
 import styled from 'styled-components'
 import { isPlainObject, isString, toUpper } from 'lodash'
@@ -6,7 +6,19 @@ import { theme } from 'theme'
 import { Typography } from 'components'
 import { readableTextColor, colorExists } from 'utils'
 
-const resolveColor = props => {
+interface ButtonProps {
+  children: ReactNode
+  color: any
+  disabled: boolean
+  disableElevation: boolean
+  disableRounded: boolean
+  fullWidth: boolean
+  onClick: () => void
+  size: string
+  variant: string
+}
+
+const resolveColor = (props: ButtonProps) => {
   const { color } = props
 
   if (!color) {
@@ -58,7 +70,7 @@ const resolveColor = props => {
   `
 }
 
-const resolveDisableRounded = props => {
+const resolveDisableRounded = (props: ButtonProps) => {
   const { disableRounded } = props
 
   if (!disableRounded) {
@@ -70,7 +82,7 @@ const resolveDisableRounded = props => {
   `
 }
 
-const resolveDisableElevation = props => {
+const resolveDisableElevation = (props: ButtonProps) => {
   const { disableElevation } = props
 
   if (!disableElevation) {
@@ -86,7 +98,7 @@ const resolveDisableElevation = props => {
   `
 }
 
-const resolveWidth = props => {
+const resolveWidth = (props: ButtonProps) => {
   const { fullWidth } = props
 
   if (!fullWidth) {
@@ -98,7 +110,7 @@ const resolveWidth = props => {
   `
 }
 
-const resolveSize = props => {
+const resolveSize = (props: ButtonProps) => {
   const { size, variant } = props
 
   const smallFontSize = `
@@ -166,7 +178,7 @@ const resolveSize = props => {
   return ''
 }
 
-const resolveDisabled = props => {
+const resolveDisabled = (props: ButtonProps) => {
   const { disabled, variant } = props
 
   if (!disabled) {
@@ -207,7 +219,7 @@ const resolveDisabled = props => {
   `
 }
 
-const resolveVariant = props => {
+const resolveVariant = (props: ButtonProps) => {
   const { variant, color } = props
 
   if (!variant) {
@@ -325,7 +337,7 @@ const Container = styled.button`
   ${resolveSize}
 `
 
-const Button = props => {
+const Button = (props: ButtonProps) => {
   const {
     size,
     color,
@@ -369,6 +381,18 @@ const Button = props => {
       {renderContent()}
     </Container>
   )
+}
+
+Button.defaultProps = {
+  children: null,
+  color: 'primary',
+  disabled: false,
+  disableElevation: false,
+  disableRounded: false,
+  fullWidth: false,
+  onClick: null,
+  size: 'medium',
+  variant: 'contained'
 }
 
 export default Button

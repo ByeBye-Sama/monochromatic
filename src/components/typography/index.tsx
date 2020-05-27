@@ -1,9 +1,17 @@
+import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import { isPlainObject } from 'lodash'
 import { theme } from 'theme'
 import { colorExists } from 'utils'
 
-const resolveColor = props => {
+interface TypographyProps {
+  align?: string
+  children?: ReactNode
+  color?: any
+  variant?: string
+}
+
+const resolveColor = (props: TypographyProps) => {
   const { color } = props
 
   if (isPlainObject(color)) {
@@ -24,13 +32,13 @@ const resolveColor = props => {
   return `color: ${theme.palette[color || 'black']};`
 }
 
-const resolveVariant = props => {
+const resolveVariant = (props: TypographyProps) => {
   const { variant } = props
 
   return theme.textStyle(variant || 'body1')
 }
 
-const resolveAlign = props => {
+const resolveAlign = (props: TypographyProps) => {
   const { align } = props
 
   if (!align) {
@@ -43,12 +51,21 @@ const resolveAlign = props => {
   `
 }
 
-const Typography = styled.div`
+const Container = styled.div`
   display: inline-block;
   text-decoration: none;
   ${resolveColor}
   ${resolveAlign}
   ${resolveVariant}
 `
+
+const Typography = (props: TypographyProps) => <Container {...props} />
+
+Typography.defaultProps = {
+  align: null,
+  children: null,
+  color: 'black',
+  variant: 'body1'
+}
 
 export default Typography

@@ -79,3 +79,7 @@ workflows:
       - storybook:
           requires:
             - test
+
+      - chromatic:
+          requires:
+            - storybook

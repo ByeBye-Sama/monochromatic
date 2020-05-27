@@ -13,8 +13,8 @@
     "storybook:build": "build-storybook",
     "storybook:deploy": "surge ./storybook-static -d $CIRCLE_PROJECT_REPONAME-$CIRCLE_BRANCH.surge.sh",
     "lint": "eslint .",
-    "chromatic": "chromatic --project-token=$CHROMATIC_TOKEN --storybook-build-dir=./storybook-static --exit-zero-on-changes",
-    "chromatic:ci": "chromatic --project-token=$CHROMATIC_TOKEN --storybook-build-dir=./storybook-static --exit-zero-on-changes --auto-accept-changes",
+    "chromatic": "chromatic --project-token=$CHROMATIC_TOKEN --exit-zero-on-changes",
+    "chromatic:ci": "chromatic --project-token=$CHROMATIC_TOKEN --exit-zero-on-changes --auto-accept-changes",
     "build-storybook": "build-storybook"
   },
   "keywords": [],

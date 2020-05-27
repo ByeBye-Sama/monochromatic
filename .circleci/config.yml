@@ -60,6 +60,9 @@ jobs:
     steps:
       - checkout
 
+      - attach_workspace:
+          at: ~/app
+
       - run:
           name: Run Chromatic
           command: bash ./scripts/chromatic-build.sh

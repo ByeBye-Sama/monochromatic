@@ -55,6 +55,18 @@ jobs:
           name: Comment Storybook url in PR
           command: bash ./scripts/comment-in-pr.sh
 
+  chromatic:
+    <<: *defaults
+    steps:
+      - checkout
+
+      - attach_workspace:
+          at: ~/app
+
+      - run:
+          name: Run Chromatic
+          command: bash ./scripts/chromatic-build.sh
+
 workflows:
   version: 2
   build-deploy-test:
@@ -68,3 +80,7 @@ workflows:
       - storybook:
           requires:
             - test
+
+      - chromatic:
+          requires:
+            - storybook

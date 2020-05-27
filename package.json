@@ -12,7 +12,10 @@
     "storybook": "start-storybook",
     "storybook:build": "build-storybook",
     "storybook:deploy": "surge ./storybook-static -d $CIRCLE_PROJECT_REPONAME-$CIRCLE_BRANCH.surge.sh",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "chromatic": "chromatic --project-token=$CHROMATIC_TOKEN --exit-zero-on-changes",
+    "chromatic:ci": "chromatic --project-token=$CHROMATIC_TOKEN --exit-zero-on-changes --auto-accept-changes",
+    "build-storybook": "build-storybook"
   },
   "keywords": [],
   "license": "ISC",
@@ -45,6 +48,7 @@
     "babel-eslint": "^10.0.3",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-styled-components": "^1.10.7",
+    "chromatic": "^4.0.3",
     "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",

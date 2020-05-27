@@ -60,8 +60,6 @@ jobs:
     steps:
       - checkout
 
-      - run: npm install
-
       - run:
           name: Run Chromatic
           command: bash ./scripts/chromatic-build.sh

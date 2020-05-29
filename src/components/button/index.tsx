@@ -3,11 +3,12 @@ import { shade, mix, transparentize } from 'polished'
 import styled from 'styled-components'
 import { isPlainObject, isString, toUpper } from 'lodash'
 import { theme } from 'theme'
-import { Typography, Box } from 'components'
+import { Typography } from 'components'
 import { readableTextColor, colorExists } from 'utils'
 
 interface ButtonProps {
   color?: any
+  children?: ReactNode
   disabled?: boolean
   disableElevation?: boolean
   disableRounded?: boolean

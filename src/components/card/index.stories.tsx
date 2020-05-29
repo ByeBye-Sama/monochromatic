@@ -50,8 +50,6 @@ export const Normal = () => {
 
   const variant = select('variant', variants, 'contained')
 
-  const fullWidth = boolean('fullWidth', false)
-
   const disableRounded = boolean('disableRounded', false)
 
   const disableElevation = boolean('disableElevation', false)

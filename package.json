@@ -12,7 +12,7 @@
     "storybook": "start-storybook",
     "storybook:build": "build-storybook",
     "storybook:deploy": "surge ./storybook-static -d $CIRCLE_PROJECT_REPONAME-$CIRCLE_BRANCH.surge.sh",
-    "lint": "eslint .",
+    "lint": "eslint --ext .js,.ts,.tsx .",
     "chromatic": "chromatic --project-token=$CHROMATIC_TOKEN --exit-zero-on-changes",
     "chromatic:ci": "chromatic --project-token=$CHROMATIC_TOKEN --exit-zero-on-changes --auto-accept-changes",
     "build-storybook": "build-storybook"
@@ -70,7 +70,7 @@
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
-      "eslint --fix"
+      "eslint --ext .js,.ts,.tsx --fix"
     ]
   },
   "eslintConfig": {
@@ -87,6 +87,7 @@
     "parser": "@typescript-eslint/parser",
     "rules": {
       "no-unused-vars": "off",
+      "@typescript-eslint/no-var-requires": "off",
       "@typescript-eslint/no-unused-vars": "error",
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",

@@ -7,7 +7,6 @@ import { Typography, Box } from 'components'
 import { readableTextColor, colorExists } from 'utils'
 
 interface ButtonProps {
-  children?: ReactNode
   color?: any
   disabled?: boolean
   disableElevation?: boolean

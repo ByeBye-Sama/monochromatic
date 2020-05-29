@@ -17,7 +17,11 @@ const StyledBox = styled(Box)`
   }
 `
 
-const MediaBox = props => {
+interface Props {
+  value: string
+}
+
+const MediaBox = (props: Props) => {
   const { value } = props
 
   return (

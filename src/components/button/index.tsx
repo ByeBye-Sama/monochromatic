@@ -7,15 +7,15 @@ import { Typography } from 'components'
 import { readableTextColor, colorExists } from 'utils'
 
 interface ButtonProps {
-  children: ReactNode
-  color: any
-  disabled: boolean
-  disableElevation: boolean
-  disableRounded: boolean
-  fullWidth: boolean
-  onClick: () => void
-  size: string
-  variant: string
+  children?: ReactNode
+  color?: any
+  disabled?: boolean
+  disableElevation?: boolean
+  disableRounded?: boolean
+  fullWidth?: boolean
+  onClick?: () => void
+  size?: string
+  variant?: string
 }
 
 const resolveColor = (props: ButtonProps) => {
@@ -114,18 +114,14 @@ const resolveSize = (props: ButtonProps) => {
   const { size, variant } = props
 
   const smallFontSize = `
-    min-height: ${theme.spacing(3.75)};
-
     > * {
-      font-size: 18px;
+      font-size: 18px !important;
     }
   `
 
   const largeFontSize = `
-    min-height: ${theme.spacing(5.75)};
-
     > * {
-      font-size: 22px;
+      font-size: 22px !important;
     }
 `
 
@@ -319,7 +315,6 @@ const Container = styled.button`
   cursor: pointer;
   display: flex;
   justify-content: center;
-  min-height: ${theme.spacing(5.25)};
   padding: ${theme.spacing(0.75, 2)};
   transition: all 0.25s ease;
   ${theme.boxShadow(2)}

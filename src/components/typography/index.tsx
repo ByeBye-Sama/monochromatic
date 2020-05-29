@@ -53,7 +53,6 @@ const resolveAlign = (props: TypographyProps) => {
 
 const Container = styled.div`
   display: inline-block;
-  text-decoration: none;
   ${resolveColor}
   ${resolveAlign}
   ${resolveVariant}

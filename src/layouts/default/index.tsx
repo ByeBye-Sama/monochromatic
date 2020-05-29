@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import { theme } from 'theme'
 import { Typography } from 'components'
@@ -16,7 +16,11 @@ export const Main = styled.main`
   }
 `
 
-const DefaultLayout = props => {
+interface LayoutProps {
+  children?: ReactNode
+}
+
+const DefaultLayout = (props: LayoutProps) => {
   const { children } = props
 
   return (

@@ -21,16 +21,24 @@ const directions = [
   'left bottom'
 ]
 
+interface PalleteProps {
+  bgColor?: any
+  textColor?: any
+  label?: string
+  value?: string
+  opacityValue?: string
+}
+
 const Container = styled(Box)`
   flex-direction: column;
 `
 
-const SolidContainer = styled(Container)`
+const SolidContainer = styled(Container)<PalleteProps>`
   background-color: ${props => props.bgColor};
   padding: ${theme.spacing(2, 0)};
 `
 
-const GradientContainer = styled(Container)`
+const GradientContainer = styled(Container)<PalleteProps>`
   background-image: linear-gradient(
     to ${props => props.bgColor.direction},
     ${props => props.bgColor.from} 0%,
@@ -45,7 +53,7 @@ const TextBox = styled(Box)`
   }
 `
 
-const StyledTypography = styled(Typography)`
+const StyledTypography = styled(Typography)<PalleteProps>`
   color: ${props => props.textColor};
 `
 
@@ -63,7 +71,7 @@ const resolveColor = bgColor => {
   return bgColor
 }
 
-const ColorBox = props => {
+const ColorBox = (props: PalleteProps) => {
   const { label, bgColor, value, opacityValue } = props
 
   const textColor = readableColor(bgColor)
@@ -91,7 +99,7 @@ const ColorBox = props => {
   )
 }
 
-const GradiantBox = props => {
+const GradiantBox = (props: PalleteProps) => {
   const { bgColor } = props
 
   const { from, to, direction } = bgColor

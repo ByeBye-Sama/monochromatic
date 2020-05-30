@@ -1,6 +1,6 @@
 import React from 'react'
-import { Typography } from 'components'
 import { DefaultLayout } from 'layouts'
+import { Typography } from 'components'
 
 const HomeScreen = () => {
   return (

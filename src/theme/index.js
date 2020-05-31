@@ -30,7 +30,8 @@ export const theme = {
     primary75: transparentize(0.25, primaryColor),
     disabled: '#DCDCDC',
     borderDisabled: '#D3D3D3',
-    textDisabled: '#A0A0A0'
+    textDisabled: '#A0A0A0',
+    gray: '#D3D3D3'
   },
   spacing: (...args) => {
     return args.map(item => (isString(item) ? item : `${8 * item}px`)).join(' ')

@@ -29,7 +29,6 @@ export const theme = {
     primary50: transparentize(0.5, primaryColor),
     primary75: transparentize(0.25, primaryColor),
     disabled: '#DCDCDC',
-    borderDisabled: '#D3D3D3',
     textDisabled: '#A0A0A0',
     gray: '#D3D3D3'
   },

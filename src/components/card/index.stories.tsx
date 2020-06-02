@@ -3,10 +3,8 @@ import { keys } from 'lodash'
 import styled from 'styled-components'
 import { select, boolean, object } from '@storybook/addon-knobs'
 import { theme } from 'theme'
-import { Typography } from 'components'
+import { Typography, CardContent, CardHeader } from 'components'
 import Card from './index'
-import CardContent from './content'
-import CardHeader from './header'
 
 const metadata = {
   title: 'Surfaces|Card',

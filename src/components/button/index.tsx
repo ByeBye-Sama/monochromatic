@@ -198,7 +198,7 @@ const resolveDisabled = (props: ButtonProps) => {
 
   if (variant === 'outlined') {
     return `
-      border-color: ${theme.palette.borderDisabled};
+      border-color: ${theme.palette.gray};
       ${disabledStyle}
     `
   }

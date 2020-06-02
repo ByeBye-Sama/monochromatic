@@ -3,7 +3,7 @@ import { keys } from 'lodash'
 import styled from 'styled-components'
 import { select, object } from '@storybook/addon-knobs'
 import { theme } from 'theme'
-import { Typography, Card, Box } from 'components'
+import { Typography, Card, Box, CardHeader } from 'components'
 import Divider from './index'
 
 const metadata = {
@@ -15,10 +15,6 @@ const metadata = {
     ]
   }
 }
-
-const StyledBox = styled(Box)`
-  padding: ${theme.spacing(2)};
-`
 
 const StyledCard = styled(Card)`
   min-width: ${theme.spacing(30)};
@@ -35,21 +31,21 @@ const Content = (props: ContentProps) => {
   const renderContent = () => {
     return (
       <>
-        <StyledBox>
+        <CardHeader>
           <Typography variant="h5">Inbox</Typography>
-        </StyledBox>
+        </CardHeader>
         <Divider color={color} orientation={orientation} />
-        <StyledBox>
+        <CardHeader>
           <Typography variant="h5">Trash</Typography>
-        </StyledBox>
+        </CardHeader>
         <Divider color={color} orientation={orientation} />
-        <StyledBox>
+        <CardHeader>
           <Typography variant="h5">Drafts</Typography>
-        </StyledBox>
+        </CardHeader>
         <Divider color={color} orientation={orientation} />
-        <StyledBox>
+        <CardHeader>
           <Typography variant="h5">Spam</Typography>
-        </StyledBox>
+        </CardHeader>
       </>
     )
   }

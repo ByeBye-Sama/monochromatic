@@ -1,3 +1,4 @@
+export { default as Avatar } from './avatar'
 export { default as Box } from './box'
 export { default as Button } from './button'
 export { default as Card } from './card'

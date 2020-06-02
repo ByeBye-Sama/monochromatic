@@ -1,11 +1,16 @@
 import React from 'react'
+import { isEmpty } from 'lodash'
+import { shade } from 'polished'
+import { Planet } from 'react-kawaii'
 import styled from 'styled-components'
 import { theme } from 'theme'
 
 interface AvatarProps {
   alt?: string
+  border?: string
   color?: string
   height?: number
+  mood?: string
   outlined?: boolean
   src?: string
   width?: number
@@ -38,16 +43,24 @@ const resolveWidth = (props: AvatarProps) => {
 const resolveColor = (props: AvatarProps) => {
   const { color, outlined } = props
 
-  const algo = !color && outlined
-
-  console.log('algo', algo)
-
   if (!outlined) {
     return ''
   }
 
   return `
     border: 3px solid ${theme.palette[color || 'primary']};
+  `
+}
+
+const resolveBorder = (props: AvatarProps) => {
+  const { border, outlined } = props
+
+  if (!outlined) {
+    return ''
+  }
+
+  return `
+    border: 3px solid ${shade(0.3, theme.palette[border || 'primary'])};
   `
 }
 
@@ -61,8 +74,51 @@ const Container = styled.img`
   ${resolveWidth}
 `
 
+const Border = styled.div`
+  border-radius: 50%;
+  ${resolveBorder}
+  ${resolveHeight}
+  ${resolveWidth}
+`
+
 const Avatar = (props: AvatarProps) => {
-  const { color, src, alt, height, width, outlined, ...rest } = props
+  const { color, src, alt, height, width, outlined, mood, ...rest } = props
+
+  const size = height * 8 || width * 8 || 40
+
+  const chooseMood = (mood: string) => {
+    if (isEmpty(mood) || mood === 'random') {
+      const moods = [
+        'sad',
+        'shocked',
+        'happy',
+        'blissful',
+        'lovestruck',
+        'excited',
+        'ko'
+      ]
+
+      const randomMood = moods[Math.floor(Math.random() * moods.length)]
+
+      console.log('randomMood', randomMood)
+
+      return randomMood
+    }
+
+    return mood
+  }
+
+  if (!src) {
+    return (
+      <Border width={width} height={height} outlined={outlined} border={color}>
+        <Planet
+          size={size}
+          mood={chooseMood(mood)}
+          color={theme.palette[color || 'primary']}
+        />
+      </Border>
+    )
+  }
 
   return (
     <Container
@@ -83,7 +139,8 @@ Avatar.defaultProps = {
   height: 5,
   outlined: false,
   src: '',
-  width: 5
+  width: 5,
+  mood: 'random'
 }
 
 export default Avatar

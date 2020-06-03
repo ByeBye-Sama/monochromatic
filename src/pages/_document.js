@@ -43,7 +43,10 @@ class KayPachaDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Patrick+Hand+SC&display=swap"
             rel="stylesheet"
           />
-
+          <link
+            href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+            rel="stylesheet"
+          />
           <link
             rel="icon"
             type="image/png"

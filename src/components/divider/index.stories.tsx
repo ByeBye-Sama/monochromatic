@@ -24,7 +24,6 @@ interface ContentProps {
   color?: any
   orientation?: string
 }
-// Change for CardContent or CardHeader elements
 const Content = (props: ContentProps) => {
   const { orientation, color } = props
 

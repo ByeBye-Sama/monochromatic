@@ -276,7 +276,7 @@ const resolveVariant = (props: ButtonProps) => {
       ${theme.boxShadow(0)}
 
       > * {
-        color: ${colorValue};
+        color: ${colorValue} !important;
       }
 
       :hover {
@@ -294,7 +294,7 @@ const resolveVariant = (props: ButtonProps) => {
       ${theme.boxShadow(0)}
 
       > * {
-        color: ${colorValue};
+        color: ${colorValue} !important;
       }
 
       :hover {

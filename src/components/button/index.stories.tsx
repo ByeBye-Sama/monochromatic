@@ -61,10 +61,17 @@ export const Gradient = () => {
 
   const variant = select('variant', variants, 'contained')
 
+  const disabled = boolean('disabled', false)
+
   const value = text('text', 'Placeholder')
 
   return (
-    <Button onClick={onClick} color={color} variant={variant}>
+    <Button
+      color={color}
+      onClick={onClick}
+      variant={variant}
+      disabled={disabled}
+    >
       {value}
     </Button>
   )

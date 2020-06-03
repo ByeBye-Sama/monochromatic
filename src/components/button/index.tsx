@@ -182,13 +182,16 @@ const resolveDisabled = (props: ButtonProps) => {
   }
 
   const disabledStyle = `
+    background-image: none;
     cursor: default;
     pointer-events:none;
     user-select: none;
     ${theme.boxShadow(0)}
+   
 
     > * {
-      color: ${theme.palette.textDisabled};
+      color: ${theme.palette.textDisabled} !important;
+      -webkit-text-fill-color: unset !important;
     }
 
     :hover {
@@ -198,7 +201,9 @@ const resolveDisabled = (props: ButtonProps) => {
 
   if (variant === 'outlined') {
     return `
+      border-image-source: none ;
       border-color: ${theme.palette.gray};
+     
       ${disabledStyle}
     `
   }

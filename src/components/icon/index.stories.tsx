@@ -2,7 +2,7 @@ import React from 'react'
 import { keys } from 'lodash'
 import { text, select, object } from '@storybook/addon-knobs'
 import { theme } from 'theme'
-import { Typography, Box } from 'components'
+import { Typography, Box, Link } from 'components'
 import Icon from './index'
 
 const metadata = {
@@ -12,15 +12,15 @@ const metadata = {
 const AditionalInfo = () => {
   return (
     <Box>
-      <Typography variant="body2">
-        Search for icon types{' '}
-        <a
+      <Typography>
+        Search for icon types {''}
+        <Link
           href="https://material.io/resources/icons"
           rel="noopener noreferrer"
           target="_blank"
         >
           here
-        </a>
+        </Link>
       </Typography>
     </Box>
   )

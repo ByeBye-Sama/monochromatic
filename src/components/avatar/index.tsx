@@ -82,7 +82,17 @@ const Border = styled.div`
 `
 
 const Avatar = (props: AvatarProps) => {
-  const { color, src, alt, height, width, outlined, mood, ...rest } = props
+  const {
+    src,
+    alt,
+    mood,
+    color,
+    width,
+    border,
+    height,
+    outlined,
+    ...rest
+  } = props
 
   const size = height * 8 || width * 8 || 40
 
@@ -125,6 +135,7 @@ const Avatar = (props: AvatarProps) => {
       src={src}
       alt={alt}
       color={color}
+      border={border}
       width={width}
       height={height}
       outlined={outlined}

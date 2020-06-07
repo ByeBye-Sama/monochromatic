@@ -110,8 +110,6 @@ const Avatar = (props: AvatarProps) => {
 
       const randomMood = moods[Math.floor(Math.random() * moods.length)]
 
-      console.log('randomMood', randomMood)
-
       return randomMood
     }
 

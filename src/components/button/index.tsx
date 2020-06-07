@@ -3,7 +3,7 @@ import { shade, mix, transparentize } from 'polished'
 import styled from 'styled-components'
 import { isPlainObject, isString, toUpper } from 'lodash'
 import { theme } from 'theme'
-import { Typography } from 'components'
+import { Typography, Loading, Box } from 'components'
 import { readableTextColor, colorExists } from 'utils'
 
 interface ButtonProps {
@@ -13,10 +13,16 @@ interface ButtonProps {
   disableElevation?: boolean
   disableRounded?: boolean
   fullWidth?: boolean
+  loading?: boolean
+  loadingColor?: string
   onClick?: () => void
   size?: string
   variant?: string
 }
+
+const StyledBox = styled(Box)`
+  visibility: hidden;
+`
 
 const resolveColor = (props: ButtonProps) => {
   const { color } = props
@@ -242,6 +248,7 @@ const resolveVariant = (props: ButtonProps) => {
 
     if (variant === 'text') {
       return `
+        background: none;
         background-image: none;
         padding: ${theme.spacing(0.75, 1)};
         ${theme.boxShadow(0)}
@@ -256,6 +263,7 @@ const resolveVariant = (props: ButtonProps) => {
 
     if (variant === 'outlined') {
       return `
+        background: none;
         background-image: none;
         border: 2px solid;
         border-image-slice: 1;
@@ -321,6 +329,7 @@ const Container = styled.button`
   display: flex;
   justify-content: center;
   padding: ${theme.spacing(0.75, 2)};
+  position: relative;
   transition: all 0.25s ease;
   ${theme.boxShadow(2)}
   ${resolveDisableRounded}
@@ -339,15 +348,17 @@ const Container = styled.button`
 
 const Button = (props: ButtonProps) => {
   const {
-    size,
-    color,
-    variant,
-    onClick,
-    disabled,
     children,
-    fullWidth,
+    color,
+    disabled,
+    disableElevation,
     disableRounded,
-    disableElevation
+    fullWidth,
+    loading,
+    loadingColor,
+    onClick,
+    size,
+    variant
   } = props
 
   const hasGradiantText =
@@ -355,9 +366,48 @@ const Button = (props: ButtonProps) => {
 
   const textColor = hasGradiantText ? color : readableTextColor(color)
 
+  const calculatedLoadingColor = loadingColor
+    ? loadingColor
+    : readableTextColor(color)
+
+  const renderLoading = () => {
+    return (
+      <Loading
+        color={calculatedLoadingColor}
+        elementSize="small"
+        height={2}
+        position="absolute"
+        variant="linear2"
+        width={5}
+      />
+    )
+  }
+
   const renderContent = () => {
     if (!isString(children)) {
+      if (loading) {
+        return (
+          <>
+            <StyledBox>{children}</StyledBox>
+            {renderLoading()}
+          </>
+        )
+      }
+
       return children
+    }
+
+    if (loading) {
+      return (
+        <>
+          <StyledBox>
+            <Typography variant="h5" color={textColor}>
+              {toUpper(children)}
+            </Typography>
+          </StyledBox>
+          {renderLoading()}
+        </>
+      )
     }
 
     return (
@@ -369,14 +419,14 @@ const Button = (props: ButtonProps) => {
 
   return (
     <Container
-      size={size}
       color={color}
-      variant={variant}
-      onClick={onClick}
       disabled={disabled}
-      fullWidth={fullWidth}
-      disableRounded={disableRounded}
       disableElevation={disableElevation}
+      disableRounded={disableRounded}
+      fullWidth={fullWidth}
+      onClick={onClick}
+      size={size}
+      variant={variant}
     >
       {renderContent()}
     </Container>
@@ -390,6 +440,7 @@ Button.defaultProps = {
   disableElevation: false,
   disableRounded: false,
   fullWidth: false,
+  loading: false,
   onClick: null,
   size: 'medium',
   variant: 'contained'

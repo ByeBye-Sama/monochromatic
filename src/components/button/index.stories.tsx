@@ -26,6 +26,8 @@ export const Normal = () => {
 
   const fullWidth = boolean('fullWidth', false)
 
+  const loading = boolean('loading', false)
+
   const disableRounded = boolean('disableRounded', false)
 
   const disableElevation = boolean('disableElevation', false)
@@ -34,14 +36,15 @@ export const Normal = () => {
 
   return (
     <Button
-      size={size}
       color={color}
-      variant={variant}
-      onClick={onClick}
       disabled={disabled}
-      fullWidth={fullWidth}
-      disableRounded={disableRounded}
       disableElevation={disableElevation}
+      disableRounded={disableRounded}
+      fullWidth={fullWidth}
+      loading={loading}
+      onClick={onClick}
+      size={size}
+      variant={variant}
     >
       {value}
     </Button>
@@ -63,14 +66,20 @@ export const Gradient = () => {
 
   const disabled = boolean('disabled', false)
 
+  const loading = boolean('loading', false)
+
+  const loadingColor = select('loadingColor', keys(theme.palette), 'white')
+
   const value = text('text', 'Placeholder')
 
   return (
     <Button
       color={color}
+      disabled={disabled}
       onClick={onClick}
       variant={variant}
-      disabled={disabled}
+      loading={loading}
+      loadingColor={loadingColor}
     >
       {value}
     </Button>

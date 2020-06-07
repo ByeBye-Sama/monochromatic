@@ -20,7 +20,7 @@ interface ButtonProps {
   variant?: string
 }
 
-const StyledBox = styled(Box)`
+const StyledBox = styled(props => <Box {...props} />)`
   visibility: hidden;
 `
 

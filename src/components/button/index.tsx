@@ -12,16 +12,28 @@ interface ButtonProps {
   disabled?: boolean
   disableElevation?: boolean
   disableRounded?: boolean
+  endIcon?: ReactNode
   fullWidth?: boolean
   loading?: boolean
   loadingColor?: string
   onClick?: () => void
   size?: string
+  startIcon?: ReactNode
   variant?: string
 }
 
 const StyledBox = styled(props => <Box {...props} />)`
   visibility: hidden;
+
+  > :not(:last-child) {
+    margin-right: ${theme.spacing(1)};
+  }
+`
+
+const WithIconBox = styled(props => <Box {...props} />)`
+  > :not(:last-child) {
+    margin-right: ${theme.spacing(1)};
+  }
 `
 
 const resolveColor = (props: ButtonProps) => {
@@ -120,13 +132,13 @@ const resolveSize = (props: ButtonProps) => {
   const { size, variant } = props
 
   const smallFontSize = `
-    > * {
+    * {
       font-size: 18px !important;
     }
   `
 
   const largeFontSize = `
-    > * {
+    * {
       font-size: 22px !important;
     }
 `
@@ -195,7 +207,7 @@ const resolveDisabled = (props: ButtonProps) => {
     ${theme.boxShadow(0)}
    
 
-    > * {
+    * {
       color: ${theme.palette.textDisabled} !important;
       -webkit-text-fill-color: unset !important;
     }
@@ -288,7 +300,7 @@ const resolveVariant = (props: ButtonProps) => {
       padding: ${theme.spacing(0.75, 1)};
       ${theme.boxShadow(0)}
 
-      > * {
+      * {
         color: ${colorValue} !important;
       }
 
@@ -306,7 +318,7 @@ const resolveVariant = (props: ButtonProps) => {
       padding: ${theme.spacing(0.625, 1.875)};
       ${theme.boxShadow(0)}
 
-      > * {
+      * {
         color: ${colorValue} !important;
       }
 
@@ -353,11 +365,13 @@ const Button = (props: ButtonProps) => {
     disabled,
     disableElevation,
     disableRounded,
+    endIcon,
     fullWidth,
     loading,
     loadingColor,
     onClick,
     size,
+    startIcon,
     variant
   } = props
 
@@ -383,14 +397,48 @@ const Button = (props: ButtonProps) => {
     )
   }
 
+  const defaultContent = () => {
+    if (startIcon || endIcon) {
+      return (
+        <WithIconBox display="flex" center>
+          {startIcon && startIcon}
+          <Typography variant="h5" color={textColor}>
+            {toUpper(children)}
+          </Typography>
+          {endIcon && endIcon}
+        </WithIconBox>
+      )
+    }
+
+    return (
+      <Typography variant="h5" color={textColor}>
+        {toUpper(children)}
+      </Typography>
+    )
+  }
+
   const renderContent = () => {
     if (!isString(children)) {
       if (loading) {
         return (
           <>
-            <StyledBox>{children}</StyledBox>
+            <StyledBox>
+              {startIcon && startIcon}
+              {children}
+              {endIcon && endIcon}
+            </StyledBox>
             {renderLoading()}
           </>
+        )
+      }
+
+      if (startIcon || endIcon) {
+        return (
+          <WithIconBox>
+            {startIcon && startIcon}
+            {children}
+            {endIcon && endIcon}
+          </WithIconBox>
         )
       }
 
@@ -400,21 +448,13 @@ const Button = (props: ButtonProps) => {
     if (loading) {
       return (
         <>
-          <StyledBox>
-            <Typography variant="h5" color={textColor}>
-              {toUpper(children)}
-            </Typography>
-          </StyledBox>
+          <StyledBox>{defaultContent()}</StyledBox>
           {renderLoading()}
         </>
       )
     }
 
-    return (
-      <Typography variant="h5" color={textColor}>
-        {toUpper(children)}
-      </Typography>
-    )
+    return defaultContent()
   }
 
   return (
@@ -439,10 +479,12 @@ Button.defaultProps = {
   disabled: false,
   disableElevation: false,
   disableRounded: false,
+  endIcon: null,
   fullWidth: false,
   loading: false,
   onClick: null,
   size: 'medium',
+  startIcon: null,
   variant: 'contained'
 }
 

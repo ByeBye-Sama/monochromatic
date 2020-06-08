@@ -1,8 +1,10 @@
 import React from 'react'
-import { keys } from 'lodash'
+import { keys, isPlainObject } from 'lodash'
 import { action } from '@storybook/addon-actions'
 import { text, select, boolean, object } from '@storybook/addon-knobs'
 import { theme } from 'theme'
+import { Icon } from 'components'
+import { readableTextColor } from 'utils'
 import Button from './index'
 
 const metadata = {
@@ -82,6 +84,77 @@ export const Gradient = () => {
       loadingColor={loadingColor}
     >
       {value}
+    </Button>
+  )
+}
+
+export const WithIcon = () => {
+  const onClick = action('onClick')
+
+  const iconType = text('iconType', 'send')
+
+  const hasStartIcon = boolean('startIcon', false)
+
+  const hasEndIcon = boolean('endIcon', true)
+
+  const color = select('color', keys(theme.palette), 'primary')
+
+  const variant = select('variant', variants, 'contained')
+
+  const size = select('size', sizes, 'medium')
+
+  const disabled = boolean('disabled', false)
+
+  const fullWidth = boolean('fullWidth', false)
+
+  const loading = boolean('loading', false)
+
+  const disableRounded = boolean('disableRounded', false)
+
+  const disableElevation = boolean('disableElevation', false)
+
+  const iconVariant = variant === 'contained' ? 'filled' : 'outlined'
+
+  const hasGradiantText =
+    isPlainObject(color) && (variant === 'text' || variant === 'outlined')
+
+  const iconColor = hasGradiantText ? color : readableTextColor(color)
+
+  console.log('iconColor', iconColor)
+
+  return (
+    <Button
+      color={color}
+      disabled={disabled}
+      disableElevation={disableElevation}
+      disableRounded={disableRounded}
+      fullWidth={fullWidth}
+      loading={loading}
+      onClick={onClick}
+      size={size}
+      variant={variant}
+      startIcon={
+        hasStartIcon && (
+          <Icon
+            color={iconColor}
+            type={iconType}
+            variant={iconVariant}
+            size={20}
+          />
+        )
+      }
+      endIcon={
+        hasEndIcon && (
+          <Icon
+            color={iconColor}
+            type={iconType}
+            variant={iconVariant}
+            size={20}
+          />
+        )
+      }
+    >
+      {iconType}
     </Button>
   )
 }

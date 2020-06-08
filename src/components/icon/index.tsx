@@ -6,7 +6,7 @@ import { colorExists } from 'utils'
 
 interface IconProps {
   color?: any
-  size?: string
+  size?: string | number
   type?: string
   variant?: string
 }
@@ -55,21 +55,27 @@ const resolveSize = (props: IconProps) => {
     return ''
   }
 
+  if (typeof size === 'number') {
+    return `
+      font-size: ${size}px;
+    `
+  }
+
   if (size === 'small') {
     return `
-    font-size: 18px;
+      font-size: 18px;
     `
   }
 
   if (size === 'large') {
     return `
-    font-size: 36px;
+      font-size: 36px;
     `
   }
 
   if (size === 'extralarge') {
     return `
-    font-size: 48px;
+      font-size: 48px;
     `
   }
 

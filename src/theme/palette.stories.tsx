@@ -99,7 +99,7 @@ const ColorBox = (props: PalleteProps) => {
   )
 }
 
-const GradiantBox = (props: PalleteProps) => {
+const GradientBox = (props: PalleteProps) => {
   const { bgColor } = props
 
   const { from, to, direction } = bgColor
@@ -111,7 +111,7 @@ const GradiantBox = (props: PalleteProps) => {
   return (
     <GradientContainer center bgColor={bgColor}>
       <StyledTypography variant="h5" textColor={textColor}>
-        GRADIANT TO {toUpper(direction)}
+        GRADIENT TO {toUpper(direction)}
       </StyledTypography>
     </GradientContainer>
   )
@@ -185,7 +185,7 @@ export const Normal = () => {
         />
       </Box>
       <Box display="flex" alignItems="center" justifyContent="space-between">
-        <GradiantBox bgColor={{ from: fromColor, to: toColor, direction }} />
+        <GradientBox bgColor={{ from: fromColor, to: toColor, direction }} />
       </Box>
     </>
   )

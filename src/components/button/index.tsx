@@ -19,6 +19,7 @@ interface ButtonProps {
   onClick?: () => void
   size?: string
   startIcon?: ReactNode
+  type?: 'button' | 'submit' | 'reset'
   variant?: string
 }
 
@@ -372,13 +373,14 @@ const Button = (props: ButtonProps) => {
     onClick,
     size,
     startIcon,
+    type,
     variant
   } = props
 
-  const hasGradiantText =
+  const hasGradientText =
     isPlainObject(color) && (variant === 'text' || variant === 'outlined')
 
-  const textColor = hasGradiantText ? color : readableTextColor(color)
+  const textColor = hasGradientText ? color : readableTextColor(color)
 
   const calculatedLoadingColor = loadingColor
     ? loadingColor
@@ -466,6 +468,7 @@ const Button = (props: ButtonProps) => {
       fullWidth={fullWidth}
       onClick={onClick}
       size={size}
+      type={type}
       variant={variant}
     >
       {renderContent()}
@@ -482,9 +485,11 @@ Button.defaultProps = {
   endIcon: null,
   fullWidth: false,
   loading: false,
+  loadingColor: null,
   onClick: null,
   size: 'medium',
   startIcon: null,
+  type: 'button',
   variant: 'contained'
 }
 

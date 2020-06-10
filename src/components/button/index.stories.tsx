@@ -115,12 +115,10 @@ export const WithIcon = () => {
 
   const iconVariant = variant === 'contained' ? 'filled' : 'outlined'
 
-  const hasGradiantText =
+  const hasGradientText =
     isPlainObject(color) && (variant === 'text' || variant === 'outlined')
 
-  const iconColor = hasGradiantText ? color : readableTextColor(color)
-
-  console.log('iconColor', iconColor)
+  const iconColor = hasGradientText ? color : readableTextColor(color)
 
   return (
     <Button

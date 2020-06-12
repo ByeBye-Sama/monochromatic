@@ -11,7 +11,7 @@
     "start": "next start",
     "storybook": "start-storybook",
     "storybook:build": "build-storybook",
-    "storybook:deploy": "surge ./storybook-static -d $CIRCLE_PROJECT_REPONAME-$CIRCLE_BRANCH.surge.sh",
+    "storybook:deploy": "surge ./storybook-static -d https://$CIRCLE_PROJECT_REPONAME-$CIRCLE_BRANCH.surge.sh",
     "lint": "eslint --ext .js,.ts,.tsx .",
     "chromatic": "chromatic --project-token=$CHROMATIC_TOKEN --exit-zero-on-changes",
     "chromatic:ci": "chromatic --project-token=$CHROMATIC_TOKEN --exit-zero-on-changes --auto-accept-changes",

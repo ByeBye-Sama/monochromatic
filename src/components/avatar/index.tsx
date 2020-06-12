@@ -143,11 +143,11 @@ const Avatar = (props: AvatarProps) => {
 }
 
 Avatar.defaultProps = {
-  alt: '',
-  color: '',
+  alt: null,
+  color: null,
   height: 5,
   outlined: false,
-  src: '',
+  src: null,
   width: 5,
   mood: 'random'
 }

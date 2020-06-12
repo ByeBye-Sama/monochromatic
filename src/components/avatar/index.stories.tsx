@@ -38,7 +38,7 @@ export const Image = () => {
 
   const src = text('src', path)
 
-  const alt = text('alt', 'Avatar')
+  const alt = text('alt', 'avatar')
 
   const outlined = boolean('outlined', false)
 

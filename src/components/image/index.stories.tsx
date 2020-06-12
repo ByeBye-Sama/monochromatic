@@ -74,7 +74,7 @@ export const Gradient = () => {
 
   const height = text('height', '80vh')
 
-  const width = text('width', '60vw')
+  const width = text('width', '40vw')
 
   const objectFit = select('objectFit', objectFitValues, 'cover')
 

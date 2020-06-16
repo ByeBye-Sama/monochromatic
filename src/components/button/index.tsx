@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, ButtonHTMLAttributes } from 'react'
 import { shade, mix, transparentize } from 'polished'
 import styled from 'styled-components'
 import { isPlainObject, isString, toUpper } from 'lodash'
@@ -6,7 +6,7 @@ import { theme } from 'theme'
 import { Typography, Loading, Box } from 'components'
 import { readableTextColor, colorExists } from 'utils'
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode
   color?: any
   disabled?: boolean
@@ -16,7 +16,6 @@ interface ButtonProps {
   fullWidth?: boolean
   loading?: boolean
   loadingColor?: string
-  onClick?: () => void
   size?: string
   startIcon?: ReactNode
   type?: 'button' | 'submit' | 'reset'
@@ -370,11 +369,11 @@ const Button = (props: ButtonProps) => {
     fullWidth,
     loading,
     loadingColor,
-    onClick,
     size,
     startIcon,
     type,
-    variant
+    variant,
+    ...rest
   } = props
 
   const hasGradientText =
@@ -466,10 +465,10 @@ const Button = (props: ButtonProps) => {
       disableElevation={disableElevation}
       disableRounded={disableRounded}
       fullWidth={fullWidth}
-      onClick={onClick}
       size={size}
       type={type}
       variant={variant}
+      {...rest}
     >
       {renderContent()}
     </Container>

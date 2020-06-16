@@ -49,7 +49,7 @@ jobs:
 
       - run:
           name: Deploy Storybook to Surge
-          command: npm run storybook:deploy
+          command: bash ./scripts/surge-deploy.sh
 
       - run:
           name: Comment Storybook url in PR

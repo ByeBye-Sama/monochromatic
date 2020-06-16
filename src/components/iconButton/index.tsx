@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ButtonHTMLAttributes } from 'react'
 import { shade, mix, transparentize } from 'polished'
 import styled from 'styled-components'
 import { isPlainObject } from 'lodash'
@@ -6,13 +6,12 @@ import { theme } from 'theme'
 import { Icon } from 'components'
 import { readableTextColor, colorExists } from 'utils'
 
-interface IconButtonProps {
+interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   color?: any
   disabled?: boolean
   disableElevation?: boolean
   icon?: string
   iconVariant?: string
-  onClick?: () => void
   padding?: number
   size?: string | number
   type?: 'button' | 'submit' | 'reset'
@@ -250,11 +249,11 @@ const IconButton = (props: IconButtonProps) => {
     disableElevation,
     icon,
     iconVariant,
-    onClick,
     padding,
     size,
     type,
-    variant
+    variant,
+    ...rest
   } = props
 
   const hasGradientText =
@@ -267,10 +266,10 @@ const IconButton = (props: IconButtonProps) => {
       color={color}
       disabled={disabled}
       disableElevation={disableElevation}
-      onClick={onClick}
       padding={padding}
       type={type}
       variant={variant}
+      {...rest}
     >
       <Icon type={icon} color={textColor} variant={iconVariant} size={size} />
     </Container>
@@ -283,7 +282,6 @@ IconButton.defaultProps = {
   disableElevation: false,
   icon: null,
   iconVariant: 'filled',
-  onClick: null,
   padding: null,
   size: 'medium',
   type: 'button',

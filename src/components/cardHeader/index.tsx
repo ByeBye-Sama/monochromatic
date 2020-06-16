@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { HTMLAttributes } from 'react'
 import styled from 'styled-components'
 import { theme } from 'theme'
 import { Box } from 'components'
@@ -8,14 +8,16 @@ const StyledBox = styled(Box)`
   width: calc(100% - ${theme.spacing(4)});
 `
 
-interface CardHeader {
-  children?: ReactNode
+interface CardHeader extends HTMLAttributes<HTMLDivElement> {
+  noPaddingBottom: boolean
+  noPaddingTop: boolean
 }
 
 const CardHeader = (props: CardHeader) => <StyledBox {...props} />
 
 CardHeader.defaultProps = {
-  children: null
+  noPaddingBottom: false,
+  noPaddingTop: false
 }
 
 export default CardHeader

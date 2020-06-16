@@ -70,8 +70,6 @@ export const Gradient = () => {
 
   const loading = boolean('loading', false)
 
-  const loadingColor = select('loadingColor', keys(theme.palette), 'white')
-
   const value = text('text', 'Placeholder')
 
   return (
@@ -81,7 +79,6 @@ export const Gradient = () => {
       onClick={onClick}
       variant={variant}
       loading={loading}
-      loadingColor={loadingColor}
     >
       {value}
     </Button>

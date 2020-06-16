@@ -1,16 +1,11 @@
-import React, { ReactNode } from 'react'
+import React, { AnchorHTMLAttributes } from 'react'
 import styled from 'styled-components'
 import { isPlainObject } from 'lodash'
 import { theme } from 'theme'
 import { colorExists } from 'utils'
 
-interface LinkProps {
-  children?: ReactNode
+interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   color?: any
-  href?: string
-  onClick?: () => void
-  rel?: string
-  target?: string
   underline?: string
 }
 
@@ -112,39 +107,17 @@ const Container = styled.a`
 `
 
 const Link = (props: LinkProps) => {
-  const {
-    rel,
-    href,
-    color,
-    target,
-    onClick,
-    children,
-    underline,
-    ...rest
-  } = props
+  const { color, onClick, children, underline, ...rest } = props
 
   return (
-    <Container
-      rel={rel}
-      href={href}
-      color={color}
-      target={target}
-      onClick={onClick}
-      underline={underline}
-      {...rest}
-    >
+    <Container color={color} onClick={onClick} underline={underline} {...rest}>
       {children}
     </Container>
   )
 }
 
 Link.defaultProps = {
-  children: null,
   color: 'primary',
-  href: null,
-  onClick: null,
-  rel: null,
-  target: null,
   underline: 'hover'
 }
 

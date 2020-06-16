@@ -1,9 +1,9 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, HTMLAttributes } from 'react'
 import styled from 'styled-components'
 import { isPlainObject } from 'lodash'
 import { theme } from 'theme'
 
-interface BoxProps {
+interface BoxProps extends HTMLAttributes<HTMLDivElement> {
   alignItems?: string
   center?: boolean
   children?: ReactNode

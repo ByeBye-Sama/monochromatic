@@ -1,18 +1,16 @@
-import React from 'react'
+import React, { ImgHTMLAttributes } from 'react'
 import { isEmpty } from 'lodash'
 import { shade } from 'polished'
 import { Planet } from 'react-kawaii'
 import styled from 'styled-components'
 import { theme } from 'theme'
 
-interface AvatarProps {
-  alt?: string
+interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
   border?: string
   color?: string
   height?: number
   mood?: string
   outlined?: boolean
-  src?: string
   width?: number
 }
 
@@ -82,17 +80,7 @@ const Border = styled.div`
 `
 
 const Avatar = (props: AvatarProps) => {
-  const {
-    src,
-    alt,
-    mood,
-    color,
-    width,
-    border,
-    height,
-    outlined,
-    ...rest
-  } = props
+  const { src, mood, color, width, border, height, outlined, ...rest } = props
 
   const size = height * 8 || width * 8 || 40
 
@@ -117,6 +105,7 @@ const Avatar = (props: AvatarProps) => {
   }
 
   if (!src) {
+    console.log('testing')
     return (
       <Border width={width} height={height} outlined={outlined} border={color}>
         <Planet
@@ -130,26 +119,24 @@ const Avatar = (props: AvatarProps) => {
 
   return (
     <Container
-      src={src}
-      alt={alt}
-      color={color}
       border={border}
-      width={width}
+      color={color}
       height={height}
       outlined={outlined}
+      src={src}
+      width={width}
       {...rest}
     />
   )
 }
 
 Avatar.defaultProps = {
-  alt: null,
   color: null,
   height: 5,
+  mood: 'random',
   outlined: false,
   src: null,
-  width: 5,
-  mood: 'random'
+  width: 5
 }
 
 export default Avatar

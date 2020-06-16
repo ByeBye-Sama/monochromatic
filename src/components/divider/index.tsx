@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { HTMLAttributes } from 'react'
 import styled from 'styled-components'
 import { isPlainObject } from 'lodash'
 import { theme } from 'theme'
 import { colorExists } from 'utils'
 
-interface DividerProps {
+interface DividerProps extends HTMLAttributes<HTMLHRElement> {
   color?: any
   orientation?: string
 }

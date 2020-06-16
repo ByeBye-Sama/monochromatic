@@ -105,6 +105,7 @@ const Avatar = (props: AvatarProps) => {
   }
 
   if (!src) {
+    console.log('testing')
     return (
       <Border width={width} height={height} outlined={outlined} border={color}>
         <Planet
@@ -118,11 +119,12 @@ const Avatar = (props: AvatarProps) => {
 
   return (
     <Container
-      color={color}
       border={border}
-      width={width}
+      color={color}
       height={height}
       outlined={outlined}
+      src={src}
+      width={width}
       {...rest}
     />
   )
@@ -131,9 +133,10 @@ const Avatar = (props: AvatarProps) => {
 Avatar.defaultProps = {
   color: null,
   height: 5,
+  mood: 'random',
   outlined: false,
-  width: 5,
-  mood: 'random'
+  src: null,
+  width: 5
 }
 
 export default Avatar

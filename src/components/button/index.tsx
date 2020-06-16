@@ -18,7 +18,6 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   loadingColor?: string
   size?: string
   startIcon?: ReactNode
-  type?: 'button' | 'submit' | 'reset'
   variant?: string
 }
 
@@ -371,7 +370,6 @@ const Button = (props: ButtonProps) => {
     loadingColor,
     size,
     startIcon,
-    type,
     variant,
     ...rest
   } = props
@@ -381,14 +379,24 @@ const Button = (props: ButtonProps) => {
 
   const textColor = hasGradientText ? color : readableTextColor(color)
 
-  const calculatedLoadingColor = loadingColor
-    ? loadingColor
-    : readableTextColor(color)
+  const getLoadingColor = () => {
+    if (loadingColor) {
+      return loadingColor
+    }
+
+    if (variant === 'outlined' || variant === 'text') {
+      return isPlainObject(color) ? color.from : color
+    }
+
+    return readableTextColor(color)
+  }
+
+  console.log('color', getLoadingColor())
 
   const renderLoading = () => {
     return (
       <Loading
-        color={calculatedLoadingColor}
+        color={getLoadingColor()}
         elementSize="small"
         height={2}
         position="absolute"
@@ -466,7 +474,6 @@ const Button = (props: ButtonProps) => {
       disableRounded={disableRounded}
       fullWidth={fullWidth}
       size={size}
-      type={type}
       variant={variant}
       {...rest}
     >
@@ -488,7 +495,6 @@ Button.defaultProps = {
   onClick: null,
   size: 'medium',
   startIcon: null,
-  type: 'button',
   variant: 'contained'
 }
 

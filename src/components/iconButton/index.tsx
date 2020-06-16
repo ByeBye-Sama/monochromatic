@@ -1,7 +1,7 @@
 import React, { ButtonHTMLAttributes } from 'react'
-import { shade, mix, transparentize } from 'polished'
 import styled from 'styled-components'
 import { isPlainObject } from 'lodash'
+import { shade, mix, transparentize } from 'polished'
 import { theme } from 'theme'
 import { Icon } from 'components'
 import { readableTextColor, colorExists } from 'utils'

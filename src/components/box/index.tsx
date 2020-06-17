@@ -13,6 +13,7 @@ interface BoxProps extends HTMLAttributes<HTMLDivElement> {
    */
   color?: any
   display?: string
+  flexDirection?: string
   justifyContent?: string
   rounded?: boolean
 }
@@ -52,7 +53,7 @@ const resolveRounded = (props: BoxProps) => {
 }
 
 const resolveDisplay = (props: BoxProps) => {
-  const { display, justifyContent, alignItems } = props
+  const { display, justifyContent, alignItems, flexDirection } = props
 
   if (!display) {
     return ''
@@ -63,6 +64,7 @@ const resolveDisplay = (props: BoxProps) => {
       align-items: ${alignItems || ''};
       display: ${display};
       justify-content: ${justifyContent || ''};
+      flex-direction: ${flexDirection || ''};
     `
   }
 
@@ -101,6 +103,7 @@ Box.defaultProps = {
   children: null,
   color: null,
   display: null,
+  flexDirection: null,
   justifyContent: null,
   rounded: false
 }

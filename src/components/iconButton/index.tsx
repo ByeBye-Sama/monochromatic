@@ -225,6 +225,7 @@ const Container = styled.button`
   border: none;
   cursor: pointer;
   display: flex;
+  height: fit-content;
   justify-content: center;
   padding: ${theme.spacing(1.5)};
   position: relative;

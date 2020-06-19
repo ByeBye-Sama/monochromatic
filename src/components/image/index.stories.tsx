@@ -24,7 +24,7 @@ const grayscaleRange = {
 }
 
 export const Normal = () => {
-  const path = `${cloudinaryPath}/v1591074685/monochromatic/stories/Avatar.jpg`
+  const path = `${cloudinaryPath}/v1591074685/monochromatic/stories/avatar.jpg`
 
   const src = text('src', path)
 
@@ -66,7 +66,7 @@ export const Gradient = () => {
 
   const gradient = object('color', defaultValue)
 
-  const path = `${cloudinaryPath}/v1591074685/monochromatic/stories/Avatar.jpg`
+  const path = `${cloudinaryPath}/v1591074685/monochromatic/stories/avatar.jpg`
 
   const src = text('src', path)
 

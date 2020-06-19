@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { HTMLAttributes } from 'react'
 import styled from 'styled-components'
 import { theme } from 'theme'
 import { Box } from 'components'
@@ -8,14 +8,8 @@ const StyledBox = styled(Box)`
   width: calc(100% - ${theme.spacing(4)});
 `
 
-interface CardContent {
-  children?: ReactNode
-}
-
-const CardContent = (props: CardContent) => <StyledBox {...props} />
-
-CardContent.defaultProps = {
-  children: null
-}
+const CardContent = (props: HTMLAttributes<HTMLDivElement>) => (
+  <StyledBox {...props} />
+)
 
 export default CardContent

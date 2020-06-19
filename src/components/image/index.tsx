@@ -1,10 +1,9 @@
-import React from 'react'
+import React, { ImgHTMLAttributes } from 'react'
 import styled from 'styled-components'
 import { theme } from 'theme'
 import { Box } from 'components'
 
-interface ImageProps {
-  alt?: string
+interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   blur?: number
   boxShadow?: number
   gradient?: {
@@ -16,7 +15,6 @@ interface ImageProps {
   grayscale?: number
   height?: number | string
   objectFit?: string
-  src?: string
   width?: number | string
 }
 
@@ -180,14 +178,12 @@ const GradientSpan = styled.span`
 
 const Image = (props: ImageProps) => {
   const {
-    alt,
     blur,
     boxShadow,
     gradient,
     grayscale,
     height,
     objectFit,
-    src,
     width,
     ...rest
   } = props
@@ -195,13 +191,11 @@ const Image = (props: ImageProps) => {
   const renderContent = () => {
     return (
       <Container
-        alt={alt}
         blur={blur}
         boxShadow={boxShadow}
         grayscale={grayscale}
         height={height}
         objectFit={objectFit}
-        src={src}
         width={width}
         {...rest}
       />
@@ -221,14 +215,12 @@ const Image = (props: ImageProps) => {
 }
 
 Image.defaultProps = {
-  alt: null,
   blur: null,
   boxShadow: null,
   gradient: null,
   grayscale: null,
   height: null,
   objectFit: 'cover',
-  src: null,
   width: null
 }
 

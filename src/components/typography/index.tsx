@@ -1,12 +1,11 @@
-import React, { ReactNode } from 'react'
+import React, { HTMLAttributes } from 'react'
 import styled from 'styled-components'
 import { isPlainObject } from 'lodash'
 import { theme } from 'theme'
 import { colorExists } from 'utils'
 
-interface TypographyProps {
+interface TypographyProps extends HTMLAttributes<HTMLParagraphElement> {
   align?: string
-  children?: ReactNode
   color?: any
   variant?: string
 }
@@ -62,7 +61,6 @@ const Typography = (props: TypographyProps) => <Container {...props} />
 
 Typography.defaultProps = {
   align: null,
-  children: null,
   color: 'black',
   variant: 'body1'
 }

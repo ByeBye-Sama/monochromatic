@@ -1,10 +1,9 @@
-import React, { ReactNode } from 'react'
+import React, { HTMLAttributes } from 'react'
 import styled from 'styled-components'
 import { breakpoints } from 'theme'
 import { useWindowDimensions } from 'hooks'
 
-interface HiddenProps {
-  children?: ReactNode
+interface HiddenProps extends HTMLAttributes<HTMLSpanElement> {
   lg?: boolean
   md?: boolean
   sm?: boolean
@@ -20,7 +19,7 @@ const Container = styled.span`
 `
 
 const Hidden = (props: HiddenProps) => {
-  const { xs, sm, md, lg, xl, children } = props
+  const { xs, sm, md, lg, xl, children, ...rest } = props
 
   const { width } = useWindowDimensions()
 
@@ -44,11 +43,10 @@ const Hidden = (props: HiddenProps) => {
     return null
   }
 
-  return <Container>{children}</Container>
+  return <Container {...rest}>{children}</Container>
 }
 
 Hidden.defaultProps = {
-  children: null,
   lg: false,
   md: false,
   sm: false,

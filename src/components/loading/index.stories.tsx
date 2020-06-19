@@ -22,7 +22,7 @@ const variants = [
 const sizes = ['small', 'medium', 'large']
 
 const StyledBox = styled(Box)`
-  height: calc(100vh - ${theme.spacing(2)});
+  height: calc(100vh - ${theme.spacing(4)});
   width: 100%;
 `
 

@@ -9,10 +9,13 @@ import Divider from './index'
 const metadata = {
   title: 'Data Display|Divider',
   parameters: {
-    backgrounds: [
-      { name: 'light', value: '#E0E0E0', default: true },
-      { name: 'dark', value: '#333333' }
-    ]
+    backgrounds: {
+      default: 'light',
+      values: [
+        { name: 'light', value: '#E0E0E0', default: true },
+        { name: 'dark', value: '#333333' }
+      ]
+    }
   }
 }
 

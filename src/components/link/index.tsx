@@ -4,7 +4,7 @@ import { isPlainObject } from 'lodash'
 import { theme } from 'theme'
 import { colorExists } from 'utils'
 
-interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+export interface LinkProps {
   color?: any
   underline?: string
 }
@@ -106,19 +106,11 @@ const Container = styled.a`
   ${resolveUnderline}
 `
 
-const Link = (props: LinkProps) => {
-  const { color, onClick, children, underline, ...rest } = props
-
-  return (
-    <Container color={color} onClick={onClick} underline={underline} {...rest}>
-      {children}
-    </Container>
-  )
-}
+export const Link = (
+  props: LinkProps & AnchorHTMLAttributes<HTMLAnchorElement>
+) => <Container {...props} />
 
 Link.defaultProps = {
   color: 'primary',
   underline: 'hover'
 }
-
-export default Link

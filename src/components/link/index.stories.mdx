@@ -1,0 +1,112 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import * as stories from './index.stories.tsx'
+import Link from './index'
+
+<Meta title="Navigation|Link" />
+
+# Link
+
+Testing `MDX` docs with `CSF` stories.
+
+## Normal
+
+This is just an example waiting for [Storybook 6.0](https://github.com/storybookjs/storybook/milestone/25)
+to fix `Show Code` [issue](https://github.com/storybookjs/storybook/issues/9583)
+
+<Preview>
+  <Story name="Normal" argTypes={{
+  children: {
+    type: { required: true },
+    description: 'testing',
+    table: {
+      type: {
+        summary: 'color',
+        detail: 'agg'
+      }
+    },
+    control: {
+      type: null
+    }
+  },
+  underline: {
+    description: 'description of prop',
+    table: {
+      type: {
+        summary: 'hover | none | always'
+      },
+      defaultValue: {
+        summary: 'hover'
+      }
+    },
+    control: {
+      type: null
+    }
+  },
+  color: {
+    description: 'testing',
+    table: {
+      type: {
+        summary: 'color',
+        detail: 'agg'
+      }
+    },
+    control: {
+      type: null
+    }
+  }
+}}>{stories.Normal()}</Story>
+</Preview>
+
+### Props
+
+<Props story="Normal" />
+
+## Gradient
+
+<Preview>
+  <Story name="Gradient" argTypes={{
+  children: {
+    type: { required: true },
+    description: 'testingignsdggsdg',
+    table: {
+      type: {
+        summary: 'color',
+        detail: 'agg'
+      }
+    },
+    control: {
+      type: null
+    }
+  },
+  underline: {
+    description: 'description of prop',
+    table: {
+      type: {
+        summary: 'hover | none | always'
+      },
+      defaultValue: {
+        summary: 'hover'
+      }
+    },
+    control: {
+      type: null
+    }
+  },
+  color: {
+    description: 'testing',
+    table: {
+      type: {
+        summary: 'color',
+        detail: 'agg'
+      }
+    },
+    control: {
+      type: null
+    }
+  }
+}}>{stories.Gradient()}</Story>
+</Preview>
+
+### Props
+
+<Props story="Gradient"/>

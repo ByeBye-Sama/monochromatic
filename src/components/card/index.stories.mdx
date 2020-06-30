@@ -1,0 +1,241 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import * as stories from './index.stories.tsx'
+
+<Meta title="Surfaces|Card" />
+
+# Card
+
+<p style={{fontSize: '22px'}}>Cards contain content and actions about a single subject.</p>
+
+## Normal
+
+Check for card subcomponents for custom components inside `Card`.
+
+<Preview>
+  <Story name="Normal" argTypes={{
+    children: {
+      description: 'The content of the component.',
+      table: {
+        type: {
+          summary: 'node',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    color: {
+      description: 'The color of the component.',
+      table: {
+        type: {
+          summary: `'primary'|'tint1'|'tint2'|'tint3'|'shade1'|'shade2'|'shade3'| +6`,
+          detail: `'white'|'black'|'primary00'|'primary25'|'primary50'|'primary75'`
+        },
+        defaultValue: {
+          summary: `'white'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    disableElevation: {
+      description: `If 'true', no elevation is used.`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    disableRounded: {
+      description: `If 'true', no rounded style is used.`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    variant: {
+      description: `The variant to use.`,
+      table: {
+        type: {
+          summary: `'contained' | 'outlined'`
+        },
+        defaultValue: {
+          summary: `'contained'`
+        }
+      },
+      control: {
+        type: null
+      }
+    }
+}}>{stories.Normal()}</Story>
+</Preview>
+
+#### Source 
+
+```jsx
+<Card>
+  <CardHeader
+    label="Card Title"
+    subtitle="This is a Card Subtitle"
+    avatar={<Avatar />}
+    action={<IconButton icon="more_vert" />}
+  />
+  <Image 
+    src="https://res.cloudinary.com/kaypacha/image/upload/v1591074685/monochromatic/stories/avatar.jpg"
+    grayscale={0.5} 
+  />
+  <CardContent>
+    <Typography color="shade2">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at
+      tellus a augue congue gravida vestibulum et risus. Duis euismod felis
+      sit amet vehicula posuere. Donec scelerisque pulvinar orci sed mollis.
+      Praesent vel lectus sed nulla pellentesque efficitur. Integer gravida,
+      risus eget tempus iaculis, elit quam tristique nisi, vel ultricies
+      augue est vel tortor. Pellentesque ornare felis sit amet elit pharetra
+      dapibus.
+    </Typography>
+  </CardContent>
+  <CardActions>
+    <Button variant="text">Share</Button>
+    <Button
+      variant="text"
+      color={{ from: 'shade3', to: 'primary', direction: 'left' }}
+    >
+      Learn more
+    </Button>
+  </CardActions>
+</Card>
+```
+
+#### Props
+
+<Props story="Normal" />
+
+## Gradient
+
+If `Card` has the `outlined` variant, rounded style will be not applied. 
+
+<Preview>
+  <Story name="Gradient" argTypes={{
+    children: {
+      description: 'The content of the component.',
+      table: {
+        type: {
+          summary: 'node',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    color: {
+      description: `The color of the component.`,
+      table: {
+        type: {
+          summary: `{ from: 'color', to: 'color', direction: 'direction' }`,
+          detail: `direction: 'right'|'left'|'top'|'bottom'|'right top'|'right bottom'|'left top'|'left bottom'`,
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    disableElevation: {
+      description: `If 'true', no elevation is used.`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    disableRounded: {
+      description: `If 'true', no rounded style is used.`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    variant: {
+      description: `The variant to use.`,
+      table: {
+        type: {
+          summary: `'contained' | 'outlined'`
+        },
+        defaultValue: {
+          summary: `'contained'`
+        }
+      },
+      control: {
+        type: null
+      }
+    }
+}}>{stories.Gradient()}</Story>
+</Preview>
+
+#### Source
+
+```jsx
+<Card  color={{ from: 'white', to: 'tint3', direction: 'bottom' }}>
+  <CardHeader
+    label="Card Title"
+    subtitle="This is a Card Subtitle"
+    avatar={<Avatar />}
+    action={<IconButton icon="more_vert" />}
+  />
+  <Image 
+    src="https://res.cloudinary.com/kaypacha/image/upload/v1591074685/monochromatic/stories/avatar.jpg"
+    grayscale={0.5} 
+  />
+  <CardContent>
+    <Typography color="shade2">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at
+      tellus a augue congue gravida vestibulum et risus. Duis euismod felis
+      sit amet vehicula posuere. Donec scelerisque pulvinar orci sed mollis.
+      Praesent vel lectus sed nulla pellentesque efficitur. Integer gravida,
+      risus eget tempus iaculis, elit quam tristique nisi, vel ultricies
+      augue est vel tortor. Pellentesque ornare felis sit amet elit pharetra
+      dapibus.
+    </Typography>
+  </CardContent>
+  <CardActions>
+    <Button variant="text">Share</Button>
+    <Button
+      variant="text"
+      color={{ from: 'shade3', to: 'primary', direction: 'left' }}
+    >
+      Learn more
+    </Button>
+  </CardActions>
+</Card>
+```
+
+#### Props
+
+<Props story="Gradient"/>

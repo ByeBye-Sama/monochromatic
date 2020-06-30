@@ -1,0 +1,155 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import * as stories from './index.stories.tsx'
+
+<Meta title="Data Display|Icon" />
+
+# Icon
+
+<p style={{fontSize: '22px'}}>The Icon component works with Material Icons Font.</p>
+
+## Normal
+
+`Icon` works with ligatures so search for icons on [Material Design](https://material.io/resources/icons).
+
+<Preview>
+  <Story name="Normal" argTypes={{
+    color: {
+      description: 'The color of the component.',
+      table: {
+        type: {
+          summary: `'primary'|'tint1'|'tint2'|'tint3'|'shade1'|'shade2'|'shade3'| +6`,
+          detail: `'white'|'black'|'primary00'|'primary25'|'primary50'|'primary75'`
+        },
+        defaultValue: {
+          summary: `'black'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    size: {
+      description: 'The size of the icon, if you use a number the amount in px is applied.',
+      table: {
+        type: {
+          summary: `number | ('small'|'medium'|'large'|'extralarge')`,
+        },
+        defaultValue: {
+          summary: `'medium'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    type: {
+      type: { 
+        required: true 
+      },
+      description: 'The icon to display, you can get the icon name from Material Design.',
+      table: {
+        type: {
+          summary: 'string',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    variant: {
+      description: 'The design of the icon.',
+      table: {
+        type: {
+          summary: `'filled' | 'outlined'`
+        },
+        defaultValue: {
+          summary: `'filled'`
+        }
+      },
+      control: {
+        type: null
+      }
+    }
+}}>{stories.Normal()}</Story>
+</Preview>
+
+#### Source 
+
+```jsx
+<Icon type="home" color="primary" />
+```
+
+#### Props
+
+<Props story="Normal" />
+
+## Gradient
+
+<Preview>
+  <Story name="Gradient" argTypes={{
+    color: {
+      description: 'The color of the component.',
+      table: {
+        type: {
+          summary: `{ from: 'color', to: 'color', direction: 'direction' }`,
+          detail: `direction: 'right'|'left'|'top'|'bottom'|'right top'|'right bottom'|'left top'|'left bottom'`,
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    size: {
+      description: 'The size of the icon, if you use a number the amount in px is applied.',
+      table: {
+        type: {
+          summary: `number | ('small'|'medium'|'large'|'extralarge')`,
+        },
+        defaultValue: {
+          summary: `'medium'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    type: {
+      type: { 
+        required: true 
+      },
+      description: 'The icon to display, you can get the icon name from Material Design.',
+      table: {
+        type: {
+          summary: 'string',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    variant: {
+      description: 'The design of the icon.',
+      table: {
+        type: {
+          summary: `'filled' | 'outlined'`
+        },
+        defaultValue: {
+          summary: `'filled'`
+        }
+      },
+      control: {
+        type: null
+      }
+    }
+}}>{stories.Gradient()}</Story>
+</Preview>
+
+#### Source
+
+```jsx
+<Icon type="home" color={{ from: 'shade2', to: 'tint1', direction: 'right' }} />
+```
+
+#### Props
+
+<Props story="Gradient"/>

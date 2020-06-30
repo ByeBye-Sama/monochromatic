@@ -6,7 +6,8 @@ import { Typography, Box, Link } from 'components'
 import Icon from './index'
 
 const metadata = {
-  title: 'Data Display|Icon'
+  title: 'Data Display|Icon',
+  includeStories: []
 }
 
 const AditionalInfo = () => {

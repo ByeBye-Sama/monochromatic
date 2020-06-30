@@ -1,0 +1,160 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import * as stories from './index.stories.tsx'
+
+<Meta title="Data Display|Avatar" />
+
+# Avatar
+
+<p style={{fontSize: '22px'}}>Avatars are found throughout material design with uses in everything.</p>
+
+## Mood avatars
+
+If `Avatar` component doesn't have a `src` prop a mood avatar will be displayed.
+
+<Preview>
+  <Story name="Normal" argTypes={{
+    color: {
+      description: 'The color of the mood.',
+      table: {
+        type: {
+          summary: `'primary'|'tint1'|'tint2'|'tint3'|'shade1'|'shade2'|'shade3'| +6`,
+          detail: `'white'|'black'|'primary00'|'primary25'|'primary50'|'primary75'`
+        },
+        defaultValue: {
+          summary: `'primary'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    mood: {
+      description: 'Mood of avatar when there is not src.',
+      table: {
+        type: {
+          summary: `'random'|'sad'|'shocked'|'happy'|'blissful'|'lovestruck'|'excited'|'ko'`,
+        },
+        defaultValue: {
+          summary: `'random'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    outlined: {
+      description: `Create a border around avatar to use as state, use a shade version of color prop for the border.`,
+      table: {
+        type: {
+          summary: 'boolean',
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    size: {
+      description: `The size of the avatar, theme.spacing is used.`,
+      table: {
+        type: {
+          summary: 'number',
+        },
+        defaultValue: {
+          summary: 5
+        }
+      },
+      control: {
+        type: null
+      }
+    }
+}}>{stories.Normal()}</Story>
+</Preview>
+
+#### Source 
+
+```jsx
+<Avatar />
+```
+
+#### Props
+
+<Props story="Normal" />
+
+## Image avatars
+
+Image avatars can be created by passing standard `img` props `src` or `srcSet` to the component. Image avatar has all `img` props.
+
+<Preview>
+  <Story name="Image" argTypes={{
+    color: {
+      description: 'The color of the border if oulined is true.',
+      table: {
+        type: {
+          summary: `'primary'|'tint1'|'tint2'|'tint3'|'shade1'|'shade2'|'shade3'| +6`,
+          detail: `'white'|'black'|'primary00'|'primary25'|'primary50'|'primary75'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    outlined: {
+      description: `Create a border around avatar to use as state`,
+      table: {
+        type: {
+          summary: 'boolean',
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    size: {
+      description: `The size of the avatar, theme.spacing is used.`,
+      table: {
+        type: {
+          summary: 'number',
+        },
+        defaultValue: {
+          summary: 5
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    src: {
+      type: { 
+        required: true 
+      },
+      description: 'The src attribute for the img element.',
+      table: {
+        type: {
+          summary: 'string',
+        }
+      },
+      control: {
+        type: null
+      }
+    }
+}}>{stories.Image()}</Story>
+</Preview>
+
+#### Source 
+
+```jsx
+<Avatar
+  alt="avatar"
+  src="https://res.cloudinary.com/kaypacha/image/upload/v1591074685/monochromatic/stories/avatar.jpg"
+/>
+```
+
+#### Props
+
+<Props story="Image" />

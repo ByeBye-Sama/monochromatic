@@ -1,0 +1,385 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import * as stories from './index.stories.tsx'
+
+<Meta title="Inputs|Button" />
+
+# Button
+
+<p style={{fontSize: '22px'}}>Buttons allow users to take actions, and make choices, with a single tap.</p>
+
+## Normal
+
+`Button` component also has all `button` props like `onClick`, etc.
+If you want to modify font props you must use `Typography` component as children.
+
+<Preview>
+  <Story name="Normal" argTypes={{
+    children: {
+      description: 'The content of the button.',
+      table: {
+        type: {
+          summary: 'node'
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    color: {
+      description: 'The color of the component.',
+      table: {
+        type: {
+          summary: `'primary'|'tint1'|'tint2'|'tint3'|'shade1'|'shade2'|'shade3'| +6`,
+          detail: `'white'|'black'|'primary00'|'primary25'|'primary50'|'primary75'`
+        },
+        defaultValue: {
+          summary: 'primary'
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    disabled: {
+      description: `If 'true', the button will be disabled.`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    disableElevation: {
+      description: `If 'true', no elevation is used.`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    disableRounded: {
+      description: `If 'true', no rounded style is used.`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    endIcon: {
+      description: 'Element placed after the children.',
+      table: {
+        type: {
+          summary: 'node'
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    fullWidth: {
+      description: `If 'true', the button will take up the full width of its container.`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    loading: {
+      description: `If 'true', a 'Loading' component is displayed.`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    loadingColor: {
+      description: `If loading 'true', applies color to the 'Loading' component.`,
+      table: {
+        type: {
+          summary: `'primary'|'tint1'|'tint2'|'tint3'|'shade1'|'shade2'|'shade3'| +6`,
+          detail: `'white'|'black'|'primary00'|'primary25'|'primary50'|'primary75'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    size: {
+      description: `The size of the button.`,
+      table: {
+        type: {
+          summary: `'small'|'medium'|'large'`
+        },
+        defaultValue: {
+          summary: `'medium'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    startIcon: {
+      description: 'Element placed before the children.',
+      table: {
+        type: {
+          summary: 'node'
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    variant: {
+      description: `The variant to use.`,
+      table: {
+        type: {
+          summary: `'contained'|'outlined'|'text'`
+        },
+        defaultValue: {
+          summary: `'contained'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+}}>{stories.Normal()}</Story>
+</Preview>
+
+#### Source 
+
+```jsx
+<Button>
+  Primary
+</Button>
+```
+
+### With Icon
+
+<Preview>
+  <Story name="WithIcon">{stories.WithIcon()}</Story>
+</Preview>
+
+#### Source 
+
+```jsx
+<Button endIcon={<Icon type="send" size={20} />} >
+  Send
+</Button>
+```
+
+#### Props
+
+<Props story="Normal" />
+
+## Gradient
+
+If `Button` has the `outlined` variant, rounded style will be not applied. 
+
+<Preview>
+  <Story name="Gradient" argTypes={{
+    children: {
+      description: 'The content of the button.',
+      table: {
+        type: {
+          summary: 'node'
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    color: {
+      description: `The color of the component.`,
+      table: {
+        type: {
+          summary: `{ from: 'color', to: 'color', direction: 'direction' }`,
+          detail: `direction: 'right'|'left'|'top'|'bottom'|'right top'|'right bottom'|'left top'|'left bottom'`,
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    disabled: {
+      description: `If 'true', the button will be disabled.`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    disableElevation: {
+      description: `If 'true', no elevation is used.`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    disableRounded: {
+      description: `If 'true', no rounded style is used.`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    endIcon: {
+      description: 'Element placed after the children.',
+      table: {
+        type: {
+          summary: 'node'
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    fullWidth: {
+      description: `If 'true', the button will take up the full width of its container.`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    loading: {
+      description: `If 'true', a 'Loading' component is displayed.`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    loadingColor: {
+      description: `If loading 'true', applies color to the 'Loading' component.`,
+      table: {
+        type: {
+          summary: `'primary'|'tint1'|'tint2'|'tint3'|'shade1'|'shade2'|'shade3'| +6`,
+          detail: `'white'|'black'|'primary00'|'primary25'|'primary50'|'primary75'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    size: {
+      description: `The size of the button.`,
+      table: {
+        type: {
+          summary: `'small'|'medium'|'large'`
+        },
+        defaultValue: {
+          summary: `'medium'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    startIcon: {
+      description: 'Element placed before the children.',
+      table: {
+        type: {
+          summary: 'node'
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    variant: {
+      description: `The variant to use.`,
+      table: {
+        type: {
+          summary: `'contained'|'outlined'|'text'`,
+          detail: `If button has 'outlined' variant, rounded style will be not applied.`
+        },
+        defaultValue: {
+          summary: `'contained'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+}}>{stories.Gradient()}</Story>
+</Preview>
+
+#### Source
+
+```jsx
+<Button
+  color={{ 
+    from: 'shade2',
+    to: 'primary',
+    direction: 'right bottom'
+  }}
+>
+  Primary
+</Button>
+```
+
+#### Props
+
+<Props story="Gradient"/>

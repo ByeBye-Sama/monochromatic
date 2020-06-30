@@ -6,7 +6,8 @@ import { theme } from 'theme'
 import IconButton from './index'
 
 const metadata = {
-  title: 'Inputs|IconButton'
+  title: 'Inputs|IconButton',
+  includeStories: []
 }
 
 const variants = ['contained', 'outlined', 'text']

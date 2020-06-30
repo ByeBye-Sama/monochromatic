@@ -11,27 +11,47 @@ export const breakpoints = {
   xl: 1920
 }
 
-export const primaryColor = '#29AC9C'
+const palette = {
+  white: '#FFFFFF',
+  get tint3() {
+    return tint(0.75, this.primary)
+  },
+  get tint2() {
+    return tint(0.5, this.primary)
+  },
+  get tint1() {
+    return tint(0.25, this.primary)
+  },
+  primary: '#29AC9C',
+  get shade1() {
+    return shade(0.25, this.primary)
+  },
+  get shade2() {
+    return shade(0.5, this.primary)
+  },
+  get shade3() {
+    return shade(0.75, this.primary)
+  },
+  black: 'rgba(0, 0, 0, 0.87)',
+  get primary00() {
+    return transparentize(1, this.primary)
+  },
+  get primary25() {
+    return transparentize(0.75, this.primary)
+  },
+  get primary50() {
+    return transparentize(0.5, this.primary)
+  },
+  get primary75() {
+    return transparentize(0.25, this.primary)
+  },
+  disabled: '#DCDCDC',
+  textDisabled: '#A0A0A0',
+  gray: '#D3D3D3'
+}
 
 export const theme = {
-  palette: {
-    white: '#FFFFFF',
-    tint3: tint(0.75, primaryColor),
-    tint2: tint(0.5, primaryColor),
-    tint1: tint(0.25, primaryColor),
-    primary: primaryColor,
-    shade1: shade(0.25, primaryColor),
-    shade2: shade(0.5, primaryColor),
-    shade3: shade(0.75, primaryColor),
-    black: '#000000',
-    primary00: transparentize(1, primaryColor),
-    primary25: transparentize(0.75, primaryColor),
-    primary50: transparentize(0.5, primaryColor),
-    primary75: transparentize(0.25, primaryColor),
-    disabled: '#DCDCDC',
-    textDisabled: '#A0A0A0',
-    gray: '#D3D3D3'
-  },
+  palette,
   spacing: (...args) => {
     return args.map(item => (isString(item) ? item : `${8 * item}px`)).join(' ')
   },

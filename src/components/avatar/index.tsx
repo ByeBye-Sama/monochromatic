@@ -6,35 +6,22 @@ import styled from 'styled-components'
 import { theme } from 'theme'
 
 interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
-  border?: string
   color?: string
-  height?: number
   mood?: string
   outlined?: boolean
-  width?: number
+  size?: number
 }
 
-const resolveHeight = (props: AvatarProps) => {
-  const { height } = props
+const resolveSize = (props: AvatarProps) => {
+  const { size } = props
 
-  if (!height) {
+  if (!size) {
     return ''
   }
 
   return `
-    height: ${theme.spacing(height || 5)};
-  `
-}
-
-const resolveWidth = (props: AvatarProps) => {
-  const { width } = props
-
-  if (!width) {
-    return ''
-  }
-
-  return `
-    width: ${theme.spacing(width || 5)};
+    height: ${theme.spacing(size || 5)};
+    width: ${theme.spacing(size || 5)};
   `
 }
 
@@ -51,14 +38,14 @@ const resolveColor = (props: AvatarProps) => {
 }
 
 const resolveBorder = (props: AvatarProps) => {
-  const { border, outlined } = props
+  const { color, outlined } = props
 
   if (!outlined) {
     return ''
   }
 
   return `
-    border: 3px solid ${shade(0.3, theme.palette[border || 'primary'])};
+    border: 3px solid ${shade(0.3, theme.palette[color || 'primary'])};
   `
 }
 
@@ -68,21 +55,19 @@ const Container = styled.img`
   width: ${theme.spacing(5)};
   border-radius: 50%;
   ${resolveColor}
-  ${resolveHeight}
-  ${resolveWidth}
+  ${resolveSize}
 `
 
 const Border = styled.div`
   border-radius: 50%;
   ${resolveBorder}
-  ${resolveHeight}
-  ${resolveWidth}
+  ${resolveSize}
 `
 
 const Avatar = (props: AvatarProps) => {
-  const { src, mood, color, width, border, height, outlined, ...rest } = props
+  const { src, mood, color, outlined, size, ...rest } = props
 
-  const size = height * 8 || width * 8 || 40
+  const moodSize = size * 8 || 40
 
   const chooseMood = (mood: string) => {
     if (isEmpty(mood) || mood === 'random') {
@@ -105,11 +90,10 @@ const Avatar = (props: AvatarProps) => {
   }
 
   if (!src) {
-    console.log('testing')
     return (
-      <Border width={width} height={height} outlined={outlined} border={color}>
+      <Border size={size} outlined={outlined} color={color}>
         <Planet
-          size={size}
+          size={moodSize}
           mood={chooseMood(mood)}
           color={theme.palette[color || 'primary']}
         />
@@ -119,12 +103,10 @@ const Avatar = (props: AvatarProps) => {
 
   return (
     <Container
-      border={border}
       color={color}
-      height={height}
       outlined={outlined}
+      size={size}
       src={src}
-      width={width}
       {...rest}
     />
   )
@@ -132,11 +114,10 @@ const Avatar = (props: AvatarProps) => {
 
 Avatar.defaultProps = {
   color: null,
-  height: 5,
   mood: 'random',
   outlined: false,
-  src: null,
-  width: 5
+  size: 5,
+  src: null
 }
 
 export default Avatar

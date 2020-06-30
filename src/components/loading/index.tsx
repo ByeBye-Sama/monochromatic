@@ -13,11 +13,11 @@ import { theme } from 'theme'
 interface LoadingProps {
   color?: string
   elementSize?: string
-  height?: number
+  height?: number | string
   position?: string
   speed?: number
   variant?: string
-  width?: number
+  width?: number | string
 }
 
 const resolveHeight = (props: LoadingProps) => {
@@ -27,8 +27,14 @@ const resolveHeight = (props: LoadingProps) => {
     return ''
   }
 
+  if (typeof height === 'string') {
+    return `
+      height: ${height};
+    `
+  }
+
   return `
-    height: ${theme.spacing(height || 5)};
+    height: ${theme.spacing(height)};
   `
 }
 
@@ -39,8 +45,14 @@ const resolveWidth = (props: LoadingProps) => {
     return ''
   }
 
+  if (typeof width === 'string') {
+    return `
+      width: ${width};
+    `
+  }
+
   return `
-    width: ${theme.spacing(width || 5)};
+    width: ${theme.spacing(width)};
   `
 }
 

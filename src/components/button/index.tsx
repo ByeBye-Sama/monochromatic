@@ -391,8 +391,6 @@ const Button = (props: ButtonProps) => {
     return readableTextColor(color)
   }
 
-  console.log('color', getLoadingColor())
-
   const renderLoading = () => {
     return (
       <Loading
@@ -492,7 +490,6 @@ Button.defaultProps = {
   fullWidth: false,
   loading: false,
   loadingColor: null,
-  onClick: null,
   size: 'medium',
   startIcon: null,
   variant: 'contained'

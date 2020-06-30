@@ -18,6 +18,7 @@ import Card from './index'
 
 const metadata = {
   title: 'Surfaces|Card',
+  includeStories: [],
   parameters: {
     backgrounds: {
       default: 'light',

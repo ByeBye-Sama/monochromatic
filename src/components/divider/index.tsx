@@ -55,6 +55,7 @@ const resolveOrientation = (props: DividerProps) => {
 
 const Container = styled.hr`
   border: none;
+  margin: 0;
   ${resolveColor}
   ${resolveOrientation}
 `

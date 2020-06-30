@@ -6,7 +6,8 @@ import { moods, cloudinaryPath } from 'constants.js'
 import Avatar from './index'
 
 const metadata = {
-  title: 'Data Display|Avatar'
+  title: 'Data Display|Avatar',
+  includeStories: []
 }
 
 export const Normal = () => {
@@ -16,19 +17,9 @@ export const Normal = () => {
 
   const outlined = boolean('outlined', false)
 
-  const height = number('height', 5)
+  const size = number('size', 5)
 
-  const width = number('width', 5)
-
-  return (
-    <Avatar
-      mood={mood}
-      color={color}
-      width={width}
-      height={height}
-      outlined={outlined}
-    />
-  )
+  return <Avatar color={color} mood={mood} outlined={outlined} size={size} />
 }
 
 export const Image = () => {
@@ -42,19 +33,10 @@ export const Image = () => {
 
   const outlined = boolean('outlined', false)
 
-  const height = number('height', 5)
-
-  const width = number('width', 5)
+  const size = number('size', 5)
 
   return (
-    <Avatar
-      src={src}
-      alt={alt}
-      color={color}
-      width={width}
-      height={height}
-      outlined={outlined}
-    />
+    <Avatar alt={alt} color={color} outlined={outlined} size={size} src={src} />
   )
 }
 

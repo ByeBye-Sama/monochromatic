@@ -8,6 +8,7 @@ import Divider from './index'
 
 const metadata = {
   title: 'Data Display|Divider',
+  includeStories: [],
   parameters: {
     backgrounds: {
       default: 'light',

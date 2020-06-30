@@ -1,28 +1,242 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
 import * as stories from './index.stories.tsx'
-import Box from './index'
 
 <Meta title="Layout|Box" />
 
 # Box
 
-Testing `MDX` docs with `CSF` stories.
+<p style={{fontSize: '22px'}}>The Box component serves as a wrapper component for most of the CSS utility needs.</p>
 
 ## Normal
 
-This is just an example waiting for [Storybook 6.0](https://github.com/storybookjs/storybook/milestone/25)
-to fix `Show Code` [issue](https://github.com/storybookjs/storybook/issues/9583)
-
 <Preview>
-  <Story name="Normal">{stories.Normal()}</Story>
+  <Story name="Normal" argTypes={{
+    alignItems: {
+      description: `If 'display' prop is set to 'flex' set the 'align-items' on the component.`,
+      table: {
+        type: {
+          summary: `'flex-start'|'flex-end'|'center'|'stretch'|'baseline'| etc...`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    center: {
+      description: `Center children elements. Set 'flex' and 'align-items' & 'justify-content' to center.`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    children: {
+      description: 'The content of the component.',
+      table: {
+        type: {
+          summary: 'node',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    color: {
+      description: 'The color of the component.',
+      table: {
+        type: {
+          summary: `'primary'|'tint1'|'tint2'|'tint3'|'shade1'|'shade2'|'shade3'| +6`,
+          detail: `'white'|'black'|'primary00'|'primary25'|'primary50'|'primary75'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    display: {
+      description: `Set the 'display' on the component.`,
+      table: {
+        type: {
+          summary: `'block'|'inline'|'inline-block'|'flex'| etc...`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    flexDirection: {
+      description: `If 'display' prop is set to 'flex' set the 'flex-direction' on the component.`,
+      table: {
+        type: {
+          summary: `'row'|'row-reverse'|'column'|'column-reverse'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    justifyContent: {
+      description: `If 'display' prop is set to 'flex' set the 'justify-content' on the component.`,
+      table: {
+        type: {
+          summary: `'flex-start'|'flex-end'|'center'|'space-between'|'space-around'| etc...`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    rounded: {
+      description: `Applies rounded style to the component`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+}}>{stories.Normal()}</Story>
 </Preview>
 
-### Props
+#### Source 
 
-<Props of={Box} />
+```jsx
+<Box color="primary" >
+  <Typography variant="h1">
+    Placeholder
+  </Typography>
+</Box>
+```
+
+#### Props
+
+<Props story="Normal" />
 
 ## Gradient
 
 <Preview>
-  <Story name="Gradient">{stories.Gradient()}</Story>
+  <Story name="Gradient" argTypes={{
+    alignItems: {
+      description: `If 'display' prop is set to 'flex' set the 'align-items' on the component.`,
+      table: {
+        type: {
+          summary: `'flex-start'|'flex-end'|'center'|'stretch'|'baseline'| etc...`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    center: {
+      description: `Center children elements. Set 'flex' and 'align-items' & 'justify-content' to center.`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    children: {
+      description: 'The content of the component.',
+      table: {
+        type: {
+          summary: 'node',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    color: {
+      description: `The color of the component.`,
+      table: {
+        type: {
+          summary: `{ from: 'color', to: 'color', direction: 'direction' }`,
+          detail: `direction: 'right'|'left'|'top'|'bottom'|'right top'|'right bottom'|'left top'|'left bottom'`,
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    display: {
+      description: `Set the 'display' on the component.`,
+      table: {
+        type: {
+          summary: `'block'|'inline'|'inline-block'|'flex'| etc...`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    flexDirection: {
+      description: `If 'display' prop is set to 'flex' set the 'flex-direction' on the component.`,
+      table: {
+        type: {
+          summary: `'row'|'row-reverse'|'column'|'column-reverse'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    justifyContent: {
+      description: `If 'display' prop is set to 'flex' set the 'justify-content' on the component.`,
+      table: {
+        type: {
+          summary: `'flex-start'|'flex-end'|'center'|'space-between'|'space-around'| etc...`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    rounded: {
+      description: `Applies rounded style to the component`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+}}>{stories.Gradient()}</Story>
 </Preview>
+
+#### Source
+
+```jsx
+<Box
+  color={{ 
+    from: 'shade1',
+    to: 'primary75',
+    direction: 'right bottom'
+  }}
+/>
+```
+
+#### Props
+
+<Props story="Gradient"/>

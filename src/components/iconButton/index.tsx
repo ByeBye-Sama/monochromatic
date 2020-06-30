@@ -14,7 +14,6 @@ interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   iconVariant?: string
   padding?: number
   size?: string | number
-  type?: 'button' | 'submit' | 'reset'
   variant?: string
 }
 
@@ -252,7 +251,6 @@ const IconButton = (props: IconButtonProps) => {
     iconVariant,
     padding,
     size,
-    type,
     variant,
     ...rest
   } = props
@@ -268,7 +266,6 @@ const IconButton = (props: IconButtonProps) => {
       disabled={disabled}
       disableElevation={disableElevation}
       padding={padding}
-      type={type}
       variant={variant}
       {...rest}
     >
@@ -285,7 +282,6 @@ IconButton.defaultProps = {
   iconVariant: 'filled',
   padding: null,
   size: 'medium',
-  type: 'button',
   variant: 'text'
 }
 

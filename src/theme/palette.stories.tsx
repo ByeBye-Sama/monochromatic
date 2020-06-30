@@ -4,10 +4,18 @@ import { toUpper, startsWith } from 'lodash'
 import { color, select } from '@storybook/addon-knobs'
 import { rgba, tint, shade, readableColor, transparentize, mix } from 'polished'
 import { Typography, Box } from 'components'
-import { theme, primaryColor } from './index'
+import { theme } from './index'
 
 const metadata = {
-  title: 'Theme|Palette'
+  title: 'Theme|Palette',
+  parameters: {
+    viewMode: 'story',
+    previewTabs: {
+      'storybook/docs/panel': {
+        hidden: true
+      }
+    }
+  }
 }
 
 const directions = [
@@ -118,7 +126,7 @@ const GradientBox = (props: PalleteProps) => {
 }
 
 export const Normal = () => {
-  const primary = color('primaryColor', primaryColor)
+  const primary = color('primaryColor', theme.palette.primary)
 
   const palette = {
     white: '#ffffff',

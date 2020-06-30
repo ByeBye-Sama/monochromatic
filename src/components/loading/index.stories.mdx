@@ -1,0 +1,110 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import * as stories from './index.stories.tsx'
+
+<Meta title="Feedback|Loading" />
+
+# Loading
+
+<p style={{fontSize: '22px'}}>Loading known as spinners, express an unspecified wait time.</p>
+
+<Preview>
+  <Story name="Normal" argTypes={{
+    color: {
+      description: 'The color of the component.',
+      table: {
+        type: {
+          summary: `'primary'|'tint1'|'tint2'|'tint3'|'shade1'|'shade2'|'shade3'| +6`,
+          detail: `'white'|'black'|'primary00'|'primary25'|'primary50'|'primary75'`
+        },
+        defaultValue: {
+          summary: `'primary'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    elementSize: {
+      description: 'The size of the sub-elements that build the loading.',
+      table: {
+        type: {
+          summary: `'small'|'medium'|'large'`,
+        },
+        defaultValue: {
+          summary: `'medium'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    height: {
+      description: `The height of the loading. If using a number, theme.spacing is used. If using a string, you need to provide the CSS unit, e.g '3rem'.`,
+      table: {
+        type: {
+          summary: 'number | string',
+        },
+        defaultValue: {
+          summary: 5
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    speed: {
+      description: 'The animation speed of loading.',
+      table: {
+        type: {
+          summary: 'number',
+        },
+        defaultValue: {
+          summary: 1
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    variant: {
+      description: 'Type of loading to display.',
+      table: {
+        type: {
+          summary: `circular'|'circular2'|'linear'|'linear2'|'diamond'|'solar'`,
+        },
+        defaultValue: {
+          summary: `'circular'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    width: {
+      description: `The width of the loading. If using a number, theme.spacing is used. If using a string, you need to provide the CSS unit, e.g '3rem'.`,
+      table: {
+        type: {
+          summary: 'number | string',
+        },
+        defaultValue: {
+          summary: 5
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+}}>{stories.Normal()}</Story>
+</Preview>
+
+#### Source 
+
+```jsx
+<Box center>
+  <Loading />
+</Box>
+```
+
+#### Props
+
+<Props story="Normal" />

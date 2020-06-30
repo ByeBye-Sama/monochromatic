@@ -1,23 +1,31 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
 import * as stories from './index.stories.tsx'
 
-<Meta title="Navigation|Link" />
+<Meta title="Data Display|Typography" />
 
-# Link
+# Typography
 
-<p style={{fontSize: '22px'}}>The Link component allows you to easily customize anchor elements with your theme colors and typography styles.</p>
+<p style={{fontSize: '22px'}}>The Typography component allows you to easily customize paragraph elements.</p>
 
 ## Normal
 
-`Link` component is built on top of the `Typography` component
+`Typography` has also all `<p>` props
 
 <Preview>
   <Story name="Normal" argTypes={{
-    children: {
-      type: { 
-        required: true 
+    align: {
+      description: `Set the 'text-align' on the component.`,
+      table: {
+        type: {
+          summary: `'inherit'|'left'|'center'|'right'|'justify'`
+        }
       },
-      description: 'The content of the link.',
+      control: {
+        type: null
+      }
+    },
+    children: {
+      description: 'The content of the component.',
       table: {
         type: {
           summary: 'node',
@@ -28,28 +36,28 @@ import * as stories from './index.stories.tsx'
       }
     },
     color: {
-      description: 'The color of the link content and underline.',
+      description: 'The color of the component.',
       table: {
         type: {
           summary: `'primary'|'tint1'|'tint2'|'tint3'|'shade1'|'shade2'|'shade3'| +6`,
           detail: `'white'|'black'|'primary00'|'primary25'|'primary50'|'primary75'`
         },
         defaultValue: {
-          summary: `'primary'`
+          summary: `'black'`
         }
       },
       control: {
         type: null
       }
     },
-    underline: {
-      description: 'Controls when the link should have an underline.',
+    variant: {
+      description: 'Applies the theme typography styles.',
       table: {
         type: {
-          summary: `'hover'|'none'|'always'`
+          summary: `'h1'|'h2'|'h3'|'h4'|'h5'|'h6'|'body1'|'body2'`
         },
         defaultValue: {
-          summary: `'hover'`
+          summary: `'body1'`
         }
       },
       control: {
@@ -62,16 +70,8 @@ import * as stories from './index.stories.tsx'
 #### Source 
 
 ```jsx
-<Typography variant="h4" color="black">
-  This is an example for
-  <Link
-    href="https://github.com/ByeBye-Sama"
-    rel="noopener noreferrer"
-    target="_blank"
-  >
-    Link
-  </Link>
-  . The Link component is built on top of the Typography component
+<Typography variant="h1" color="primary">
+  Placeholder
 </Typography>
 ```
 
@@ -84,10 +84,7 @@ import * as stories from './index.stories.tsx'
 <Preview>
   <Story name="Gradient" argTypes={{
     children: {
-      type: { 
-        required: true 
-      },
-      description: 'The content of the link.',
+      description: 'The content of the component.',
       table: {
         type: {
           summary: 'node',
@@ -98,7 +95,7 @@ import * as stories from './index.stories.tsx'
       }
     },
     color: {
-      description: 'The color of the link content and underline.',
+      description: `The color of the component. 'inline-block' will be applied`,
       table: {
         type: {
           summary: `{ from: 'color', to: 'color', direction: 'direction' }`,
@@ -109,14 +106,14 @@ import * as stories from './index.stories.tsx'
         type: null
       }
     },
-    underline: {
-      description: 'Controls when the link should have an underline.',
+    variant: {
+      description: 'Applies the theme typography styles.',
       table: {
         type: {
-          summary: `'hover'|'none'|'always'`
+          summary: `'h1'|'h2'|'h3'|'h4'|'h5'|'h6'|'body1'|'body2'`
         },
         defaultValue: {
-          summary: `'hover'`
+          summary: `'body1'`
         }
       },
       control: {
@@ -129,21 +126,15 @@ import * as stories from './index.stories.tsx'
 #### Source
 
 ```jsx
-<Typography variant="h4" color="black">
-  This is an example for
-  <Link
-    color={{ 
-      from: 'shade3',
-      to: 'tint1',
-      direction: 'right'
-    }}
-    href="https://github.com/ByeBye-Sama"
-    rel="noopener noreferrer"
-    target="_blank"
-  >
-    Gradient Link
-  </Link>
-  . The Link component is built on top of the Typography component
+<Typography
+  variant="h1"
+  color={{ 
+    from: 'shade3',
+    to: 'tint1',
+    direction: 'right'
+  }}
+>
+  Placeholder
 </Typography>
 ```
 

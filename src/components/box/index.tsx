@@ -7,10 +7,6 @@ interface BoxProps extends HTMLAttributes<HTMLDivElement> {
   alignItems?: string
   center?: boolean
   children?: ReactNode
-  /**
-   * For solid color use a string.
-   * If you want to use gradient use and object with `from`, `to` and `direction` inside.
-   */
   color?: any
   display?: string
   flexDirection?: string

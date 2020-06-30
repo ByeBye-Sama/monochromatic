@@ -7,7 +7,8 @@ import { Box } from 'components'
 import Loading from './index'
 
 const metadata = {
-  title: 'Feedback|Loading'
+  title: 'Feedback|Loading',
+  includeStories: []
 }
 
 const variants = [
@@ -22,7 +23,7 @@ const variants = [
 const sizes = ['small', 'medium', 'large']
 
 const StyledBox = styled(Box)`
-  height: calc(100vh - ${theme.spacing(2)});
+  height: ${theme.spacing(15)};
   width: 100%;
 `
 

@@ -5,7 +5,8 @@ import { Typography, Box } from 'components'
 import Hidden from './index'
 
 const metadata = {
-  title: 'Layout|Hidden'
+  title: 'Layout|Hidden',
+  includeStories: []
 }
 
 const StyledBox = styled(Box)`

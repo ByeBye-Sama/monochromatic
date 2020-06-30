@@ -25,6 +25,8 @@ const resolveColor = (props: TypographyProps) => {
         'right'}, ${fromColor} 0%, ${toColor} 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      display: inline-block;
+
     `
   }
 
@@ -46,12 +48,11 @@ const resolveAlign = (props: TypographyProps) => {
 
   return `
     text-align: ${align};
-    width: 100%;
   `
 }
 
-const Container = styled.div`
-  display: inline-block;
+const Container = styled.p`
+  margin: 0;
   ${resolveColor}
   ${resolveAlign}
   ${resolveVariant}

@@ -1,0 +1,132 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import * as stories from './index.stories.tsx'
+
+<Meta title="Data Display|Divider" />
+
+# Divider
+
+<p style={{fontSize: '22px'}}>A divider is a thin line that groups content in lists and layouts.</p>
+
+## Normal
+
+The `Divider` renders as an `<hr>` by default.
+
+<Preview>
+  <Story name="Normal" argTypes={{
+    color: {
+      description: 'The color of the component.',
+      table: {
+        type: {
+          summary: `'primary'|'tint1'|'tint2'|'tint3'|'shade1'|'shade2'|'shade3'| +7`,
+          detail: `'white'|'black'|'primary00'|'primary25'|'primary50'|'primary75'|'gray'`
+        },
+        defaultValue: {
+          summary: `'gray'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    orientation: {
+      description: 'The divider orientation.',
+      table: {
+        type: {
+          summary: `'horizontal' | 'vertical'`
+        },
+        defaultValue: {
+          summary: `'horizontal'`
+        }
+      },
+      control: {
+        type: null
+      }
+    }
+}}>{stories.Normal()}</Story>
+</Preview>
+
+#### Source 
+
+```jsx
+<Card>
+  <CardContent>
+    <Typography variant="h5">Inbox</Typography>
+  </CardContent>
+  <Divider />
+  <CardContent>
+    <Typography variant="h5">Trash</Typography>
+  </CardContent>
+  <Divider />
+  <CardContent>
+    <Typography variant="h5">Drafts</Typography>
+  </CardContent>
+  <Divider />
+  <CardContent>
+    <Typography variant="h5">Spam</Typography>
+  </CardContent>
+</Card>
+```
+
+#### Props
+
+<Props story="Normal" />
+
+## Gradient
+
+<Preview>
+  <Story name="Gradient" argTypes={{
+    color: {
+      description: 'The color of the component.',
+      table: {
+        type: {
+          summary: `{ from: 'color', to: 'color', direction: direction' }`,
+          detail: `direction: 'right'|'left'|'top'|'bottom'|'right top'|'right bottom'|'left top'|'left bottom'`,
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    orientation: {
+      description: 'The divider orientation.',
+      table: {
+        type: {
+          summary: `'horizontal' | 'vertical'`
+        },
+        defaultValue: {
+          summary: `'horizontal'`
+        }
+      },
+      control: {
+        type: null
+      }
+    }
+}}>{stories.Gradient()}</Story>
+</Preview>
+
+#### Source
+
+```jsx
+<Card>
+  <CardContent>
+    <Typography variant="h5">Inbox</Typography>
+  </CardContent>
+  <Divider color={{ from: 'primary', to: 'gray', direction: 'right' }} />
+  <CardContent>
+    <Typography variant="h5">Trash</Typography>
+  </CardContent>
+  <Divider color={{ from: 'primary', to: 'gray', direction: 'right' }} />
+  <CardContent>
+    <Typography variant="h5">Drafts</Typography>
+  </CardContent>
+  <Divider color={{ from: 'primary', to: 'gray', direction: 'right' }} />
+  <CardContent>
+    <Typography variant="h5">Spam</Typography>
+  </CardContent>
+</Card>
+```
+
+#### Props
+
+<Props story="Gradient"/>
+

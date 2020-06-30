@@ -1,0 +1,143 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import * as stories from './index.stories.tsx'
+
+<Meta title="Layout|Hidden" />
+
+# Hidden
+
+<p style={{fontSize: '22px'}}>Quickly and responsively toggle the visibility value of components and more with the hidden utilities.</p>
+
+## Normal
+
+All elements are visible unless they are explicitly hidden
+
+<Preview>
+  <Story name="Normal" argTypes={{
+    children: {
+      description: 'The content of the component.',
+      table: {
+        type: {
+          summary: 'node',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    lg: {
+      description: `If 'true', screens this size and down will be hidden`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    md: {
+      description: `If 'true', screens this size and down will be hidden`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    sm: {
+      description: `If 'true', screens this size and down will be hidden`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    xl: {
+      description: `If 'true', screens this size and down will be hidden`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    xs: {
+      description: `If 'true', screens this size and down will be hidden`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+}}>{stories.Normal()}</Story>
+</Preview>
+
+#### Source 
+
+```jsx
+<Box>
+  <Typography variant="h1" align="center">
+  Hide on ...
+  </Typography>
+  <Box
+    display="flex"
+    alignItems="center"
+    justifyContent="space-between"
+  >
+  <Hidden xs>
+    <Box center color="primary" rounded>
+      <Typography variant="h3">xs</Typography>
+    </Box>
+  </Hidden>
+  <Hidden sm>
+    <Box center color="primary" rounded>
+      <Typography variant="h3">sm</Typography>
+    </Box>
+  </Hidden>
+  <Hidden md>
+    <Box center color="primary" rounded>
+      <Typography variant="h3">md</Typography>
+    </Box>
+  </Hidden>
+  <Hidden lg>
+    <Box center color="primary" rounded>
+      <Typography variant="h3">lg</Typography>
+    </Box>
+  </Hidden>
+  <Hidden xl>
+    <Box center color="primary" rounded>
+      <Typography variant="h3">xl</Typography>
+    </Box>
+  </Hidden>
+  </Box>
+</Box>
+```
+
+#### Props
+
+<Props story="Normal" />

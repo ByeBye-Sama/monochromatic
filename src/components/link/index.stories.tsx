@@ -7,7 +7,8 @@ import { Typography } from 'components'
 import Link from './index'
 
 const metadata = {
-  title: 'Navigation|Link'
+  title: 'Navigation|Link',
+  includeStories: []
 }
 
 const underlineStyles = ['hover', 'none', 'always']
@@ -52,7 +53,7 @@ export const Gradient = () => {
 
   const color = object('color', defaultValue)
 
-  const value = text('value', 'Gradient Link')
+  const value = text('text', 'Gradient Link')
 
   const underline = select('underline', underlineStyles, 'hover')
 

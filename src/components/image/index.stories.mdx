@@ -1,0 +1,242 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import * as stories from './index.stories.tsx'
+
+<Meta title="Data Display|Image" />
+
+# Image
+
+<p style={{fontSize: '22px'}}>The Image component allows you to easily customize {`<img>`} elements .</p>
+
+## Normal
+
+`Image` component also has all `img` props 
+
+<Preview>
+  <Story name="Normal" argTypes={{
+    blur: {
+      description: `Filter property that applies blur to image. Applied in 'px' measurement`,
+      table: {
+        type: {
+          summary: 'number',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    boxShadow: {
+      description: `Add or remove shadows to component`,
+      table: {
+        type: {
+          summary: 'number',
+          detail: 'Integers from 0 to 10, if it is 0 remove the shadow'
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    grayscale: {
+      description: `Filter property that converts the image to grayscale.`,
+      table: {
+        type: {
+          summary: 'number',
+          detail: 'From 0 to 1'
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    height: {
+      description: `The height of the image. If using a number, theme.spacing is used. If using a string, you need to provide the CSS unit, e.g '50vh'.`,
+      table: {
+        type: {
+          summary: 'number | string',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    objectFit: {
+      description: 'How the image should be resized to fit its container.',
+      table: {
+        type: {
+          summary: `'fill'|'contain'|'cover'|'scale-down'|'none'`,
+        },
+        defaultValue: {
+          summary: `'cover'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    src: {
+      type: { 
+        required: true 
+      },
+      description: 'The src attribute for the img element.',
+      table: {
+        type: {
+          summary: 'string',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    width: {
+      description: `The width of the image. If using a number, theme.spacing is used. If using a string, you need to provide the CSS unit, e.g '50vw'.`,
+      table: {
+        type: {
+          summary: 'number | string',
+        }
+      },
+      control: {
+        type: null
+      }
+    }
+}}>{stories.Normal()}</Story>
+</Preview>
+
+#### Source 
+
+```jsx
+<Image
+  alt="placeholder image"
+  height={40}
+  src="https://res.cloudinary.com/kaypacha/image/upload/v1591074685/monochromatic/stories/avatar.jpg"
+  width={40}
+/>
+```
+
+#### Props
+
+<Props story="Normal" />
+
+## Gradient
+
+<Preview>
+  <Story name="Gradient" argTypes={{
+    blur: {
+      description: `Filter property that applies blur to image. Applied in 'px' measurement`,
+      table: {
+        type: {
+          summary: 'number',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    boxShadow: {
+      description: `Add or remove shadows to component`,
+      table: {
+        type: {
+          summary: 'number',
+          detail: 'Integers from 0 to 10, if it is 0 remove the shadow'
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    gradient: {
+      description: 'The color of the link content and underline.',
+      table: {
+        type: {
+          summary: `{ color: 'color', direction: 'direction', height: number|string, width: number|string }`,
+          detail: `direction: 'right'|'left'|'top'|'bottom'|'right top'|'right bottom'|'left top'|'left bottom'`,
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    grayscale: {
+      description: `Filter property that converts the image to grayscale.`,
+      table: {
+        type: {
+          summary: 'number',
+          detail: 'From 0 to 1'
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    height: {
+      description: `The height of the image. If using a number, theme.spacing is used. If using a string, you need to provide the CSS unit, e.g '50vh'.`,
+      table: {
+        type: {
+          summary: 'number | string',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    objectFit: {
+      description: 'How the image should be resized to fit its container.',
+      table: {
+        type: {
+          summary: `'fill'|'contain'|'cover'|'scale-down'|'none'`,
+        },
+        defaultValue: {
+          summary: `'cover'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    src: {
+      type: { 
+        required: true 
+      },
+      description: 'The src attribute for the img element.',
+      table: {
+        type: {
+          summary: 'string',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    width: {
+      description: `The width of the image. If using a number, theme.spacing is used. If using a string, you need to provide the CSS unit, e.g '50vw'.`,
+      table: {
+        type: {
+          summary: 'number | string',
+        }
+      },
+      control: {
+        type: null
+      }
+    }
+}}>{stories.Gradient()}</Story>
+</Preview>
+
+#### Source 
+
+```jsx
+<Image
+  alt="placeholder image"
+  gradient={{
+    color: 'shade1',
+    direction: 'bottom',
+    height: '50%',
+    width: '100%'
+  }}
+  height={40}
+  src="https://res.cloudinary.com/kaypacha/image/upload/v1591074685/monochromatic/stories/avatar.jpg"
+  width={40}
+/>
+```
+
+#### Props
+
+<Props story="Gradient" />

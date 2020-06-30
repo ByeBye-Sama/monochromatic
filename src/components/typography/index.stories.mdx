@@ -1,0 +1,143 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import * as stories from './index.stories.tsx'
+
+<Meta title="Data Display|Typography" />
+
+# Typography
+
+<p style={{fontSize: '22px'}}>The Typography component allows you to easily customize paragraph elements.</p>
+
+## Normal
+
+`Typography` has also all `<p>` props
+
+<Preview>
+  <Story name="Normal" argTypes={{
+    align: {
+      description: `Set the 'text-align' on the component.`,
+      table: {
+        type: {
+          summary: `'inherit'|'left'|'center'|'right'|'justify'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    children: {
+      description: 'The content of the component.',
+      table: {
+        type: {
+          summary: 'node',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    color: {
+      description: 'The color of the component.',
+      table: {
+        type: {
+          summary: `'primary'|'tint1'|'tint2'|'tint3'|'shade1'|'shade2'|'shade3'| +6`,
+          detail: `'white'|'black'|'primary00'|'primary25'|'primary50'|'primary75'`
+        },
+        defaultValue: {
+          summary: `'black'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    variant: {
+      description: 'Applies the theme typography styles.',
+      table: {
+        type: {
+          summary: `'h1'|'h2'|'h3'|'h4'|'h5'|'h6'|'body1'|'body2'`
+        },
+        defaultValue: {
+          summary: `'body1'`
+        }
+      },
+      control: {
+        type: null
+      }
+    }
+}}>{stories.Normal()}</Story>
+</Preview>
+
+#### Source 
+
+```jsx
+<Typography variant="h1" color="primary">
+  Placeholder
+</Typography>
+```
+
+#### Props
+
+<Props story="Normal" />
+
+## Gradient
+
+<Preview>
+  <Story name="Gradient" argTypes={{
+    children: {
+      description: 'The content of the component.',
+      table: {
+        type: {
+          summary: 'node',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    color: {
+      description: `The color of the component. 'inline-block' will be applied`,
+      table: {
+        type: {
+          summary: `{ from: 'color', to: 'color', direction: 'direction' }`,
+          detail: `direction: 'right'|'left'|'top'|'bottom'|'right top'|'right bottom'|'left top'|'left bottom'`,
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    variant: {
+      description: 'Applies the theme typography styles.',
+      table: {
+        type: {
+          summary: `'h1'|'h2'|'h3'|'h4'|'h5'|'h6'|'body1'|'body2'`
+        },
+        defaultValue: {
+          summary: `'body1'`
+        }
+      },
+      control: {
+        type: null
+      }
+    }
+}}>{stories.Gradient()}</Story>
+</Preview>
+
+#### Source
+
+```jsx
+<Typography
+  variant="h1"
+  color={{ 
+    from: 'shade3',
+    to: 'tint1',
+    direction: 'right'
+  }}
+>
+  Placeholder
+</Typography>
+```
+
+#### Props
+
+<Props story="Gradient"/>

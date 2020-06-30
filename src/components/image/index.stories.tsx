@@ -4,7 +4,8 @@ import { cloudinaryPath } from 'constants.js'
 import Image from './index'
 
 const metadata = {
-  title: 'Data Display|Image'
+  title: 'Data Display|Image',
+  includeStories: []
 }
 
 const objectFitValues = ['fill', 'contain', 'cover', 'scale-down', 'none']

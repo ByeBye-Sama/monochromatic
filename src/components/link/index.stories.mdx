@@ -1,0 +1,152 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import * as stories from './index.stories.tsx'
+
+<Meta title="Navigation|Link" />
+
+# Link
+
+<p style={{fontSize: '22px'}}>The Link component allows you to easily customize anchor elements with your theme colors and typography styles.</p>
+
+## Normal
+
+`Link` component is built on top of the `Typography` component
+
+<Preview>
+  <Story name="Normal" argTypes={{
+    children: {
+      type: { 
+        required: true 
+      },
+      description: 'The content of the link.',
+      table: {
+        type: {
+          summary: 'node',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    color: {
+      description: 'The color of the link content and underline.',
+      table: {
+        type: {
+          summary: `'primary'|'tint1'|'tint2'|'tint3'|'shade1'|'shade2'|'shade3'| +6`,
+          detail: `'white'|'black'|'primary00'|'primary25'|'primary50'|'primary75'`
+        },
+        defaultValue: {
+          summary: `'primary'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    underline: {
+      description: 'Controls when the link should have an underline.',
+      table: {
+        type: {
+          summary: `'hover'|'none'|'always'`
+        },
+        defaultValue: {
+          summary: `'hover'`
+        }
+      },
+      control: {
+        type: null
+      }
+    }
+}}>{stories.Normal()}</Story>
+</Preview>
+
+#### Source 
+
+```jsx
+<Typography variant="h4" color="black">
+  This is an example for
+  <Link
+    href="https://github.com/ByeBye-Sama"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    Link
+  </Link>
+  . The Link component is built on top of the Typography component
+</Typography>
+```
+
+#### Props
+
+<Props story="Normal" />
+
+## Gradient
+
+<Preview>
+  <Story name="Gradient" argTypes={{
+    children: {
+      type: { 
+        required: true 
+      },
+      description: 'The content of the link.',
+      table: {
+        type: {
+          summary: 'node',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    color: {
+      description: 'The color of the link content and underline.',
+      table: {
+        type: {
+          summary: `{ from: 'color', to: 'color', direction: 'direction' }`,
+          detail: `direction: 'right'|'left'|'top'|'bottom'|'right top'|'right bottom'|'left top'|'left bottom'`,
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    underline: {
+      description: 'Controls when the link should have an underline.',
+      table: {
+        type: {
+          summary: `'hover'|'none'|'always'`
+        },
+        defaultValue: {
+          summary: `'hover'`
+        }
+      },
+      control: {
+        type: null
+      }
+    }
+}}>{stories.Gradient()}</Story>
+</Preview>
+
+#### Source
+
+```jsx
+<Typography variant="h4" color="black">
+  This is an example for
+  <Link
+    color={{ 
+      from: 'shade3',
+      to: 'tint1',
+      direction: 'right'
+    }}
+    href="https://github.com/ByeBye-Sama"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    Gradient Link
+  </Link>
+  . The Link component is built on top of the Typography component
+</Typography>
+```
+
+#### Props
+
+<Props story="Gradient"/>

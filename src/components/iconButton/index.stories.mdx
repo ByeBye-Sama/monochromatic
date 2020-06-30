@@ -1,0 +1,274 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import * as stories from './index.stories.tsx'
+
+<Meta title="Inputs|IconButton" />
+
+# IconButton
+
+<p style={{fontSize: '22px'}}>Icon buttons are commonly found in app bars and toolbars.</p>
+
+## Normal
+
+Icons are also appropriate for toggle buttons that allow a single choice to be selected or deselected, such as adding or removing a star to an item.
+
+`IconButton` use `Icon` component so works with ligatures too, so search for icons on [Material Design](https://material.io/resources/icons).
+
+<Preview>
+  <Story name="Normal" argTypes={{
+    color: {
+      description: 'The color of the component.',
+      table: {
+        type: {
+          summary: `'primary'|'tint1'|'tint2'|'tint3'|'shade1'|'shade2'|'shade3'| +6`,
+          detail: `'white'|'black'|'primary00'|'primary25'|'primary50'|'primary75'`
+        },
+        defaultValue: {
+          summary: 'primary'
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    disabled: {
+      description: `If 'true', the button will be disabled.`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    disableElevation: {
+      description: `If 'true', no elevation is used.`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    icon: {
+      type: { 
+        required: true 
+      },
+      description: 'The icon to display, you can get the icon name from Material Design.',
+      table: {
+        type: {
+          summary: 'string',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    iconVariant: {
+      description: 'The design of the icon.',
+      table: {
+        type: {
+          summary: `'filled' | 'outlined'`
+        },
+        defaultValue: {
+          summary: `'filled'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    padding: {
+      description: `Applies a specific padding for all sides`,
+      table: {
+        type: {
+          summary: 'number',
+          detail: `This prop use theme.spacing for padding.`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    size: {
+      description: 'The size of the icon, if you use a number the amount in px is applied.',
+      table: {
+        type: {
+          summary: `number | ('small'|'medium'|'large'|'extralarge')`,
+        },
+        defaultValue: {
+          summary: `'medium'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    variant: {
+      description: `The variant to use.`,
+      table: {
+        type: {
+          summary: `'contained'|'outlined'|'text'`
+        },
+        defaultValue: {
+          summary: `'text'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+}}>{stories.Normal()}</Story>
+</Preview>
+
+#### Source 
+
+```jsx
+<IconButton icon="delete" />
+```
+
+#### Props
+
+<Props story="Normal" />
+
+## Gradient
+
+Gradient `IconButton` doesn't count with `outlined` variant. 
+
+<Preview>
+  <Story name="Gradient" argTypes={{
+    color: {
+      description: `The color of the component.`,
+      table: {
+        type: {
+          summary: `{ from: 'color', to: 'color', direction: 'direction' }`,
+          detail: `direction: 'right'|'left'|'top'|'bottom'|'right top'|'right bottom'|'left top'|'left bottom'`,
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    disabled: {
+      description: `If 'true', the button will be disabled.`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    disableElevation: {
+      description: `If 'true', no elevation is used.`,
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: {
+          summary: false
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    icon: {
+      type: { 
+        required: true 
+      },
+      description: 'The icon to display, you can get the icon name from Material Design.',
+      table: {
+        type: {
+          summary: 'string',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    iconVariant: {
+      description: 'The design of the icon.',
+      table: {
+        type: {
+          summary: `'filled' | 'outlined'`
+        },
+        defaultValue: {
+          summary: `'filled'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    padding: {
+      description: `Applies a specific padding for all sides`,
+      table: {
+        type: {
+          summary: 'number',
+          detail: `This prop use theme.spacing for padding.`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    size: {
+      description: 'The size of the icon, if you use a number the amount in px is applied.',
+      table: {
+        type: {
+          summary: `number | ('small'|'medium'|'large'|'extralarge')`,
+        },
+        defaultValue: {
+          summary: `'medium'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    variant: {
+      description: `The variant to use.`,
+      table: {
+        type: {
+          summary: `'contained' | 'text'`
+        },
+        defaultValue: {
+          summary: `'text'`
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+}}>{stories.Gradient()}</Story>
+</Preview>
+
+#### Source
+
+```jsx
+<IconButton
+  icon="delete"
+  color={{ 
+    from: 'shade2',
+    to: 'primary',
+    direction: 'right bottom'
+  }}
+/>
+```
+
+#### Props
+
+<Props story="Gradient"/>

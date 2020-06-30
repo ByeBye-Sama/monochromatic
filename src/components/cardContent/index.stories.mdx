@@ -1,0 +1,137 @@
+import { Meta, Story, Props } from '@storybook/addon-docs/blocks'
+
+<Meta title="Surfaces|Card Subcomponents" />
+
+## CardActions
+
+The component to display actions for `Card`.
+
+<Story
+  name="CardActions" 
+  parameters={{ 
+    viewMode: 'docs',
+    previewTabs: { canvas: { hidden: true } } 
+  }} 
+  argTypes={{
+    children: {
+      description: 'The content of the component.',
+      table: {
+        type: {
+          summary: 'node',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    position: {
+      description: `The position of children.`,
+      table: {
+        type: {
+          summary: `'left|'center'|'right'`,
+        },
+        defaultValue: {
+          summary: `'left'`
+        }
+      },
+      control: {
+        type: null
+      }
+    }
+  }} 
+/>
+
+#### Props
+
+<Props story="CardActions"/>
+
+## CardContent
+
+The component for the content of `Card`.
+
+<Story
+  name="CardContent" 
+  parameters={{ 
+    viewMode: 'docs',
+    previewTabs: { canvas: { hidden: true } } 
+  }} 
+  argTypes={{
+    children: {
+      description: 'The content of the component.',
+      table: {
+        type: {
+          summary: 'node',
+        }
+      },
+      control: {
+        type: null
+      }
+    }
+  }} 
+/>
+
+#### Props
+
+<Props story="CardContent"/>
+
+## CardHeader
+
+Custom component to display title, subtitle, avatar or action for `Card`.
+
+<Story
+  name="CardHeader" 
+  parameters={{ 
+    viewMode: 'docs',
+    previewTabs: { canvas: { hidden: true } } 
+  }} 
+  argTypes={{
+    action: {
+      description: 'The action to display in the card header.',
+      table: {
+        type: {
+          summary: 'node',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    avatar: {
+      description: 'The Avatar for the card header.',
+      table: {
+        type: {
+          summary: 'node',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    label: {
+      description: 'Display a title for the component.',
+      table: {
+        type: {
+          summary: 'string',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+    subtitle: {
+      description: 'Display a subtitle for the component.',
+      table: {
+        type: {
+          summary: 'string',
+        }
+      },
+      control: {
+        type: null
+      }
+    },
+  }} 
+/>
+
+#### Props
+
+<Props story="CardHeader"/>

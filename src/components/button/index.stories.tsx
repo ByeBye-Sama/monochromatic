@@ -8,7 +8,8 @@ import { readableTextColor } from 'utils'
 import Button from './index'
 
 const metadata = {
-  title: 'Inputs|Button'
+  title: 'Inputs|Button',
+  includeStories: []
 }
 
 const variants = ['contained', 'outlined', 'text']

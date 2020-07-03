@@ -62,7 +62,7 @@ const Content = (props: Content) => {
       />
       <Image src={src} grayscale={0.5} />
       <CardContent>
-        <Typography color="shade2">
+        <Typography>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at
           tellus a augue congue gravida vestibulum et risus. Duis euismod felis
           sit amet vehicula posuere. Donec scelerisque pulvinar orci sed mollis.

@@ -1,0 +1,266 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import * as stories from './index.stories.tsx'
+
+<Meta title="System|Theme" />
+
+# Theme
+
+<p style={{fontSize: '22px'}}>Monochromatic UI utilities for styles.</p>
+<br/>
+
+## palette
+
+**Monochromatic UI** as the name says is based on one primary color, 
+other colors in the palette are modifications from `primary`.
+
+<Story name="palette" >{stories.Palette()}</Story>
+
+<br/>
+
+#### Use
+
+To use just import `theme` and select one of the options of `palette` 
+(`primary`, `tint1`, `tint2`, `tint3`, `shade1`, `shade2`, `shade3`, `white`,`black`,`primary00`,`primary25`,`primary50`,`primary75`).
+
+```
+import React from 'react'
+import styled from 'styled-components'
+import { theme } from '@monochromatic-ui/theme'
+
+const Component = styled.div`
+  background: ${theme.palette.primary};
+  color: ${theme.palette.black};
+`
+
+export default Component
+```
+
+#### Customization
+
+To change the `primary` color of palette, you just need to assign a new one. 
+You can make this on the `root` of your project. Remember that assigning a new color 
+will change the color of all components, we do this because we think of **Monochromatic UI** 
+as a single color based library and we prefer it to be used like this. 
+Of course you can still overwrite the classes manually or maybe have one color implementation per page.
+
+```jsx
+import React from 'react'
+import { theme } from '@monochromatic-ui/theme'
+
+theme.palette.primary = '#000000'
+
+export default function App() {
+  return (
+    ...
+  )
+}
+```
+
+## textStyle
+
+`textStyle` is an utily to apply font styles. Applies `font-family`, `font-size`, `font-weight` and `line-height`.
+
+<Story name="textStyle" >{stories.TextStyle()}</Story>
+
+#### Use
+
+To use just import `theme` and select one of the options of `textStyle` 
+(`h1`, `h2`, `h3`, `h4`, `h5`, `h5`, `h6`, `body1`,`body2`).
+
+```
+import React from 'react'
+import styled from 'styled-components'
+import { theme } from '@monochromatic-ui/theme'
+
+const Component = styled.p`
+  ${theme.textStyle('h1')}
+`
+
+export default Component
+```
+
+#### Customization
+
+Same as `pallete` if you want to modify `textStyle` you need to assign a 
+new `textStyles` object on root. Even if you only want to modify a particular property, 
+use the whole object or some properties could stop working correctly. 
+If you change the `font-family` don't forget to add it to your project
+
+```jsx
+import React from 'react'
+import { theme } from '@monochromatic-ui/theme'
+
+theme.textStyles: {
+  body1: {
+    fontWeight: 400,
+    fontSize: '18px',
+    lineHeight: '27px',
+    fontFamily: 'Roboto'
+  },
+  body2: {
+    fontWeight: 400,
+    fontSize: '16px',
+    lineHeight: '24px',
+    fontFamily: 'Roboto'
+  },
+  h1: {
+    fontWeight: 600,
+    fontSize: '36px',
+    lineHeight: '54px',
+    fontFamily: 'Roboto'
+  },
+  h2: {
+    fontWeight: 600,
+    fontSize: '32px',
+    lineHeight: '48px',
+    fontFamily: 'Roboto'
+  },
+  h3: {
+    fontWeight: 600,
+    fontSize: '28px',
+    lineHeight: '42px',
+    fontFamily: 'Roboto'
+  },
+  h4: {
+    fontWeight: 600,
+    fontSize: '24px',
+    lineHeight: '36px',
+    fontFamily: 'Roboto'
+  },
+  h5: {
+    fontWeight: 600,
+    fontSize: '20px',
+    lineHeight: '30px',
+    fontFamily: 'Roboto'
+  },
+  h6: {
+    fontWeight: 600,
+    fontSize: '16px',
+    lineHeight: '24px',
+    fontFamily: 'Roboto'
+  }
+}
+}
+
+export default function App() {
+  return (
+    ...
+  )
+}
+```
+
+## spacing
+
+Use the `spacing` helper to create consistent spacing between the elements of your UI.
+**Monochromatic UI** uses a recommended 8px scaling factor by default.
+
+<Story name="spacing" >{stories.Spacing()}</Story>
+
+#### Use
+
+To use just import `theme` and use a number.
+
+```
+import React from 'react'
+import styled from 'styled-components'
+import { theme } from '@monochromatic-ui/theme'
+
+const Component = styled.div`
+  height: ${theme.spacing(10)};
+  padding: ${theme.spacing(1, 3)};
+`
+
+export default Component
+```
+
+## boxShadow
+
+Add or remove shadows to elements with box-shadow utilities.
+
+<Story name="boxShadow" >{stories.BoxShadow()}</Story>
+
+#### Use
+
+To use just import `theme` and use integers from `0` to `10`, if it is `0` it will remove shadows.
+
+```
+import React from 'react'
+import styled from 'styled-components'
+import { theme } from '@monochromatic-ui/theme'
+
+const Component = styled.div`
+  ${theme.boxShadow(2)}
+`
+
+export default Component
+```
+
+## breakpoint
+
+Utility to define media queries for responsive design. 
+`breakpoint` utility works with `max-width` to define media queries.
+
+<Story name="breakpoint" >{stories.Breakpoint()}</Story>
+
+#### Use
+
+To use just import `theme` and choose one of the breakpoint options (`xs`, `sm`, `md`, `lg`, `xl`).
+
+```
+import React from 'react'
+import styled from 'styled-components'
+import { theme } from '@monochromatic-ui/theme'
+
+const Component = styled.div`
+  background: ${theme.palette.primary};
+
+  // example of media query for mobile
+  ${theme.breakpoint.xs`
+    background: ${theme.palette.black};
+  `}
+`
+
+export default Component
+```
+
+#### Customization
+
+If you want to change breakpoints you can make it assigning new ones on root, 
+just remember to use the whole object. Also this change will modify how `Hidden` 
+component is display.
+
+```jsx
+import React from 'react'
+import { breakpoints } from '@monochromatic-ui/theme'
+
+breakpoints = {
+  xs: 360,
+  sm: 600,
+  md: 960,
+  lg: 1280,
+  xl: 1920
+}
+
+export default function App() {
+  return (
+    ...
+  )
+}
+```
+
+# Styled components
+
+**Monochromatic UI** is build with `Styled Components`, so for basic theming or custom components you can use it.
+
+```
+import React from 'react'
+import styled from 'styled-components'
+import { Button } from '@monochromatic-ui/components'
+
+const CustomButton = styled(Button)`
+  background: '#000';
+  color: '#fff';
+`
+
+export default CustomButton
+```

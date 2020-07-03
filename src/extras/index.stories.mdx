@@ -1,0 +1,128 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks'
+import LinkTo from '@storybook/addon-links/react';
+import { Typography, Image, Box, Card, CardContent, CardActions, Button, Divider, Link, Avatar } from '../components'
+
+<Meta title="Introduction"  parameters={{ 
+  viewMode: 'story',
+  previewTabs: { 
+    'storybook/docs/panel': { 
+      hidden: true 
+      } 
+    } 
+  }}
+/>
+
+<Box display="flex" justifyContent="center">
+  <Image 
+    src="https://res.cloudinary.com/kaypacha/image/upload/v1593742285/monochromatic/logo/monochromatic.png"
+    alt="monochromatic ui logo"
+    height={20}
+    width={20}
+  />
+  <Box display="flex" flexDirection="column" justifyContent="space-between" style={{ marginLeft: 40 }}>
+    <Typography style={{ fontSize: 56, fontWeight: 700, lineHeight: 0.7 }} variant="h1" color="primary">
+      Monochromatic UI
+    </Typography>
+    <Typography style={{ fontWeight: 500, width: '90%' }} variant="h4" color="shade1">
+      React components. Based on Material Design, build it with Styled Components.
+      <Typography as="span" style={{ fontWeight: 500, marginLeft: 6 }} variant="h4" color={{ from: "black", to: "tint1", direction: "right" }}>
+        With gradient styles.
+      </Typography>
+    </Typography>
+  </Box>
+</Box>
+
+<Box center style={{ marginTop: 30, marginBottom: 60}}>
+
+[![GitHub stars](https://img.shields.io/github/stars/ByeBye-Sama/monochromatic?color=%2394D5CD&style=for-the-badge)](https://github.com/ByeBye-Sama/monochromatic/stargazers) 
+[![GitHub forks](https://img.shields.io/github/forks/ByeBye-Sama/monochromatic?color=%2329AC9C&style=for-the-badge)](https://github.com/ByeBye-Sama/monochromatic/network) 
+[![GitHub license](https://img.shields.io/github/license/ByeBye-Sama/monochromatic??color=%2314564E&style=for-the-badge)](https://github.com/ByeBye-Sama/monochromatic/blob/master/LICENSE)
+
+</Box>
+
+<Box display="flex" justifyContent="space-between">
+<Card style={{ width: 'calc(50% - 12px)' }}>
+  <CardContent style={{ height: 465 }}>
+    <Typography variant="h5">
+      Installation
+    </Typography>
+    <Typography>
+      Install Monochromatic UI via npm.
+    </Typography>
+
+      npm install @monochromatic-ui
+
+  <Typography style={{ marginTop: -16 }}>
+    Load Maven Pro font.
+  </Typography>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap"/>
+
+  <Typography style={{ marginTop: -16 }}>
+    Icon component works with Material Design Icon font so you will need it too.
+  </Typography>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined"/>
+
+  </CardContent>
+</Card>
+
+<Box style={{ width: 'calc(50% - 12px)' }}>
+<Card style={{ width: '100%', marginBottom: 24 }}>
+  <CardContent>
+    <Typography variant="h5">
+      Usage
+    </Typography>
+    <Typography>
+      Just import the component you want to use
+    </Typography>
+
+    import React from 'react';
+    import { Button } from '@monochromatic-ui/components';
+
+    function App() {
+      return <Button>Hello World</Button>;
+    }
+  </CardContent>
+</Card>
+
+<Card style={{ width: '100%' }}>
+  <CardContent>
+    <Typography variant="h5">
+      Theming
+    </Typography>
+    <Typography>
+      Learn about customization and foundations such as colors, spacing, typography, etc.
+    </Typography>
+  </CardContent>
+  <CardActions>
+
+  [<Button variant="text" color="shade1">Explore Theming</Button>](/?path=/docs/system-theme--palette)
+
+  </CardActions>
+</Card>
+</Box>
+</Box>
+
+<Typography style={{ marginTop: 80 }} variant="h3">
+  Maintainers
+</Typography>
+
+<Divider />
+
+<a href="https://github.com/ByeBye-Sama" target="_blank">
+<Avatar style={{ marginTop: 20 }} size={10} src="https://avatars0.githubusercontent.com/u/19353687?s=460&u=5b414c11f7595ced350cbe720a3d7c2f14c6b0fa&v=4" />
+</a>
+
+![Twitter Follow](https://img.shields.io/twitter/follow/byebye_sama?color=29AC9C&label=Twitter&logo=twitter&logoColor=29AC9C&style=for-the-badge)
+
+
+<Typography style={{ marginTop: 40 }} variant="h3">
+  Collaborators
+</Typography>
+
+<Divider />
+
+<a href="https://github.com/sklpcc" target="_blank">
+<Avatar style={{ marginTop: 20 }} size={6} src="https://avatars3.githubusercontent.com/u/7380924?s=400&u=aae123b387dc046f7f354ab7b85b580af995fd52&v=4" />
+</a>

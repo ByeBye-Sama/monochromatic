@@ -35,19 +35,19 @@ const Content = (props: ContentProps) => {
     return (
       <>
         <CardHeader>
-          <Typography variant="h5">Inbox</Typography>
+          <Typography variant="h6">Inbox</Typography>
         </CardHeader>
         <Divider color={color} orientation={orientation} />
         <CardHeader>
-          <Typography variant="h5">Trash</Typography>
+          <Typography variant="h6">Trash</Typography>
         </CardHeader>
         <Divider color={color} orientation={orientation} />
         <CardHeader>
-          <Typography variant="h5">Drafts</Typography>
+          <Typography variant="h6">Drafts</Typography>
         </CardHeader>
         <Divider color={color} orientation={orientation} />
         <CardHeader>
-          <Typography variant="h5">Spam</Typography>
+          <Typography variant="h6">Spam</Typography>
         </CardHeader>
       </>
     )

@@ -35,6 +35,10 @@ const WithIconBox = styled(props => <Box {...props} />)`
   }
 `
 
+const StyledTypography = styled(props => <Typography {...props} />)`
+  line-height: 1.75 !important;
+`
+
 const resolveColor = (props: ButtonProps) => {
   const { color } = props
 
@@ -409,18 +413,18 @@ const Button = (props: ButtonProps) => {
       return (
         <WithIconBox display="flex" center>
           {startIcon && startIcon}
-          <Typography variant="h5" color={textColor}>
+          <StyledTypography variant="h6" color={textColor}>
             {toUpper(children)}
-          </Typography>
+          </StyledTypography>
           {endIcon && endIcon}
         </WithIconBox>
       )
     }
 
     return (
-      <Typography variant="h5" color={textColor}>
+      <StyledTypography variant="h6" color={textColor}>
         {toUpper(children)}
-      </Typography>
+      </StyledTypography>
     )
   }
 

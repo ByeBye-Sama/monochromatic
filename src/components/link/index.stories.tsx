@@ -25,7 +25,7 @@ export const Normal = () => {
   const href = text('href', 'https://github.com/ByeBye-Sama')
 
   return (
-    <Typography variant="h4" color="black">
+    <Typography variant="h5" color="black">
       This is an example for {''}
       <Link
         color={color}
@@ -60,7 +60,7 @@ export const Gradient = () => {
   const href = text('href', 'https://github.com/ByeBye-Sama')
 
   return (
-    <Typography variant="h4" color="black">
+    <Typography variant="h5" color="black">
       This is an example for {''}
       <Link
         color={color}

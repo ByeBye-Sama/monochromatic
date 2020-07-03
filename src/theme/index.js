@@ -70,51 +70,51 @@ export const theme = {
   textStyles: {
     body1: {
       fontWeight: 400,
-      fontSize: '18px',
-      lineHeight: '27px',
-      fontFamily: 'Patrick Hand, sans-serif'
+      fontSize: '16px',
+      lineHeight: '1.5',
+      fontFamily: 'Maven Pro, sans-serif'
     },
     body2: {
       fontWeight: 400,
-      fontSize: '16px',
-      lineHeight: '24px',
-      fontFamily: 'Patrick Hand, sans-serif'
+      fontSize: '14px',
+      lineHeight: '1.5',
+      fontFamily: 'Maven Pro, sans-serif'
     },
     h1: {
       fontWeight: 600,
       fontSize: '36px',
-      lineHeight: '54px',
-      fontFamily: 'Patrick Hand SC, sans-serif'
+      lineHeight: '1.5',
+      fontFamily: 'Maven Pro, sans-serif'
     },
     h2: {
       fontWeight: 600,
       fontSize: '32px',
-      lineHeight: '48px',
-      fontFamily: 'Patrick Hand SC, sans-serif'
+      lineHeight: '1.5',
+      fontFamily: 'Maven Pro, sans-serif'
     },
     h3: {
       fontWeight: 600,
       fontSize: '28px',
-      lineHeight: '42px',
-      fontFamily: 'Patrick Hand SC, sans-serif'
+      lineHeight: '1.5',
+      fontFamily: 'Maven Pro, sans-serif'
     },
     h4: {
       fontWeight: 600,
       fontSize: '24px',
-      lineHeight: '36px',
-      fontFamily: 'Patrick Hand SC, sans-serif'
+      lineHeight: '1.5',
+      fontFamily: 'Maven Pro, sans-serif'
     },
     h5: {
       fontWeight: 600,
       fontSize: '20px',
-      lineHeight: '30px',
-      fontFamily: 'Patrick Hand SC, sans-serif'
+      lineHeight: '1.5',
+      fontFamily: 'Maven Pro, sans-serif'
     },
     h6: {
       fontWeight: 600,
       fontSize: '16px',
-      lineHeight: '24px',
-      fontFamily: 'Patrick Hand SC, sans-serif'
+      lineHeight: '1.5',
+      fontFamily: 'Maven Pro, sans-serif'
     }
   },
   textStyle: style => `

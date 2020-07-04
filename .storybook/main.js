@@ -10,7 +10,6 @@ module.exports = {
     '@storybook/addon-storysource',
     '@storybook/addon-controls',
     '@storybook/addon-backgrounds/register',
-    '@storybook/addon-viewport/register',
-    '@storybook/addon-links/register'
+    '@storybook/addon-viewport/register'
   ]
 }

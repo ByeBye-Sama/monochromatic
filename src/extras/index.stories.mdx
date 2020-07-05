@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/addon-docs/blocks'
-import { Typography, Image, Box, Card, CardContent, CardActions, Button, Divider, Link, Avatar } from '../components'
+import { Typography, Image, Box, Card, CardContent, CardActions, Button, Divider, Link, Avatar, Icon } from '../components'
 
 <Meta title="Introduction"  parameters={{ 
   viewMode: 'story',
@@ -44,9 +44,12 @@ import { Typography, Image, Box, Card, CardContent, CardActions, Button, Divider
 <Box display="flex" justifyContent="space-between">
 <Card style={{ width: 'calc(50% - 12px)' }}>
   <CardContent style={{ height: 465 }}>
-    <Typography variant="h5">
-      Installation
-    </Typography>
+    <Box display="flex" alignItems="center">
+      <Typography variant="h5">
+        Installation
+      </Typography>
+      <Icon type="get_app" style={{ marginLeft: 8 }} color="primary" />
+    </Box>
     <Typography>
       Install Monochromatic UI via npm.
     </Typography>
@@ -71,11 +74,14 @@ import { Typography, Image, Box, Card, CardContent, CardActions, Button, Divider
 <Box style={{ width: 'calc(50% - 12px)' }}>
 <Card style={{ width: '100%', marginBottom: 24 }}>
   <CardContent>
-    <Typography variant="h5">
-      Usage
-    </Typography>
+    <Box display="flex" alignItems="center">
+      <Typography variant="h5">
+        Usage
+      </Typography>
+      <Icon type="construction" style={{ marginLeft: 8 }} color="primary" />
+    </Box>
     <Typography>
-      Just import the component you want to use
+      Just import the component you want to use.
     </Typography>
 
     import React from 'react';
@@ -89,9 +95,12 @@ import { Typography, Image, Box, Card, CardContent, CardActions, Button, Divider
 
 <Card style={{ width: '100%' }}>
   <CardContent>
-    <Typography variant="h5">
-      Theming
-    </Typography>
+    <Box display="flex" alignItems="center">
+      <Typography variant="h5">
+        Theming
+      </Typography>
+      <Icon type="palette" style={{ marginLeft: 8 }} color="primary" />
+    </Box>
     <Typography>
       Learn about customization and foundations such as colors, spacing, typography, etc.
     </Typography>
@@ -105,9 +114,12 @@ import { Typography, Image, Box, Card, CardContent, CardActions, Button, Divider
 </Box>
 </Box>
 
-<Typography style={{ marginTop: 80 }} variant="h3">
-  Supported Components
-</Typography>
+<Box display="flex" alignItems="center" style={{ marginTop: 80 }}>
+  <Typography variant="h3">
+    Roadmap
+  </Typography>
+  <Icon type="alt_route" style={{ marginLeft: 8 }} size="large"/>
+</Box>
 
 <Divider />
 
@@ -117,9 +129,12 @@ import { Typography, Image, Box, Card, CardContent, CardActions, Button, Divider
   For <b>next update</b> we will add form components such as <b>TextField, Select, Radio, Checkbox, Slider, etc</b>.
 </Typography>
 
-<Typography style={{ marginTop: 80 }} variant="h3">
-  Documentation
-</Typography>
+<Box display="flex" alignItems="center" style={{ marginTop: 40 }}>
+  <Typography variant="h3">
+    Documentation
+  </Typography>
+  <Icon type="history_edu" style={{ marginLeft: 8 }} size="large"/>
+</Box>
 
 <Divider />
 
@@ -128,9 +143,12 @@ import { Typography, Image, Box, Card, CardContent, CardActions, Button, Divider
   meanwhile <b>`Canvas`</b> is a playground area where you can test props and styles.
 </Typography>
 
-<Typography style={{ marginTop: 40 }} variant="h3">
-  Maintainers
-</Typography>
+<Box display="flex" alignItems="center" style={{ marginTop: 40 }}>
+  <Typography variant="h3">
+    Maintainers
+  </Typography>
+  <Icon type="code" style={{ marginLeft: 8 }} size="large"/>
+</Box>
 
 <Divider />
 
@@ -141,9 +159,12 @@ import { Typography, Image, Box, Card, CardContent, CardActions, Button, Divider
 [![Twitter Follow](https://img.shields.io/twitter/follow/byebye_sama?color=29AC9C&label=Twitter&logo=twitter&logoColor=29AC9C&style=for-the-badge)](https://twitter.com/intent/user?screen_name=byebye_sama)
 
 
-<Typography style={{ marginTop: 40 }} variant="h3">
-  Collaborators
-</Typography>
+<Box display="flex" alignItems="center" style={{ marginTop: 40 }}>
+  <Typography variant="h3">
+    Collaborators
+  </Typography>
+  <Icon type="people_outline" style={{ marginLeft: 8 }} size="large"/>
+</Box>
 
 <Divider />
 

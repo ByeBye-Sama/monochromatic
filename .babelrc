@@ -12,7 +12,12 @@
       "module-resolver",
       {
         "root": ["./src"],
-        "alias": {}
+        "alias": {
+          "src": "./src",
+          "core": "./src/components",
+          "theme": "./src/theme",
+          "utils": "./src/utils"
+        }
       }
     ]
   ]

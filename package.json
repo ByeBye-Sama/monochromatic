@@ -1,9 +1,21 @@
 {
-  "name": "monocromatic-ui",
+  "name": "monochromatic-ui",
   "version": "1.0.0",
   "author": "ByeBye-Sama",
-  "description": "React components library.",
+  "description": "The monochromatic component library for React.",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ByeBye-Sama/monochromatic"
+  },
+  "homepage": "https://monochromatic.surge.sh/",
+  "keywords": [
+    "react",
+    "react-component",
+    "material design",
+    "monochromatic"
+  ],
+  "license": "MIT",
   "scripts": {
     "dev": "start-storybook",
     "storybook:build": "build-storybook",
@@ -13,8 +25,6 @@
     "chromatic:ci": "chromatic --project-token=$CHROMATIC_TOKEN --exit-zero-on-changes --auto-accept-changes",
     "build-storybook": "build-storybook"
   },
-  "keywords": [],
-  "license": "ISC",
   "dependencies": {
     "babel-loader": "^8.1.0",
     "global": "^4.4.0",

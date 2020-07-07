@@ -1,5 +1,5 @@
 {
-  "name": "testing123-ui",
+  "name": "testingabc123-ui",
   "version": "1.0.0",
   "author": "ByeBye-Sama",
   "description": "The monochromatic component library for React.",
@@ -12,11 +12,12 @@
     "react",
     "react-component",
     "material design",
-    "monochromatic"
+    "monochromatic",
+    "front-end"
   ],
   "funding": {
     "type": "ko-fi",
-    "url": "ko-fi.com/byebye_sama"
+    "url": "https://ko-fi.com/byebye_sama"
   },
   "license": "MIT",
   "main": "build/index.js",

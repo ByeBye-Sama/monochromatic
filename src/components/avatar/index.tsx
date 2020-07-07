@@ -49,7 +49,7 @@ const resolveBorder = (props: AvatarProps) => {
   `
 }
 
-const Container = styled.img`
+const Container = styled.img<AvatarProps>`
   height: ${theme.spacing(5)};
   object-fit: cover;
   width: ${theme.spacing(5)};

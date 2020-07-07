@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { isPlainObject } from 'lodash'
 import { shade, mix, transparentize } from 'polished'
 import { theme } from 'theme'
-import { Icon } from 'components'
+import Icon from 'components/icon'
 import { readableTextColor, colorExists } from 'utils'
 
 interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -218,7 +218,7 @@ const resolveVariant = (props: IconButtonProps) => {
   return ''
 }
 
-const Container = styled.button`
+const Container = styled.button<IconButtonProps>`
   align-items: center;
   border-radius: 50%;
   border: none;

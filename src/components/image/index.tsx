@@ -1,7 +1,7 @@
 import React, { ImgHTMLAttributes } from 'react'
 import styled from 'styled-components'
 import { theme } from 'theme'
-import { Box } from 'components'
+import Box from 'components/box'
 
 interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   blur?: number

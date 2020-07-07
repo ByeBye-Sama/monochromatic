@@ -1,7 +1,8 @@
 import React, { HTMLAttributes, ReactNode } from 'react'
 import styled from 'styled-components'
 import { theme } from 'theme'
-import { Box, Typography } from 'components'
+import Box from 'components/box'
+import Typography from 'components/typography'
 
 const StyledBox = styled(Box)`
   padding: ${theme.spacing(2)};

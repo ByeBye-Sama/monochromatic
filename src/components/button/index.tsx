@@ -3,7 +3,9 @@ import styled from 'styled-components'
 import { shade, mix, transparentize } from 'polished'
 import { isPlainObject, isString, toUpper } from 'lodash'
 import { theme } from 'theme'
-import { Typography, Loading, Box } from 'components'
+import Box from 'components/box'
+import Loading from 'components/loading'
+import Typography from 'components/typography'
 import { readableTextColor, colorExists } from 'utils'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -336,7 +338,7 @@ const resolveVariant = (props: ButtonProps) => {
   return ''
 }
 
-const Container = styled.button`
+const Container = styled.button<ButtonProps>`
   align-items: center;
   border-radius: ${theme.spacing(0.5)};
   border: none;

@@ -24,9 +24,11 @@
         "root": ["."],
         "alias": {
           "src": "./src",
-          "core": "./src/components",
+          "components": "./src/components",
           "theme": "./src/theme",
-          "utils": "./src/utils"
+          "utils": "./src/utils",
+          "hooks": "./src/hooks",
+          "constants.js": "./src/constants.js"
         }
       }
     ]

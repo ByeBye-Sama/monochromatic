@@ -38,12 +38,14 @@
     "global": "^4.4.0",
     "lodash": "^4.17.15",
     "polished": "^3.6.3",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
     "react-kawaii": "^0.16.0",
     "react-loadingg": "^1.7.2",
     "styled-components": "^5.0.1",
     "styled-reset": "^4.1.0"
+  },
+  "peerDependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.4",
@@ -80,6 +82,8 @@
     "husky": "^4.2.3",
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-is": "^16.13.1",
     "rollup": "^2.20.0",
     "rollup-plugin-peer-deps-external": "^2.2.3",

@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "build",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "baseUrl": "src",
@@ -14,6 +16,6 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "exclude": ["node_modules", "build"],
+  "exclude": ["node_modules", "build", "src/**/*.stories.tsx"],
   "include": ["**/*.ts", "**/*.tsx"]
 }

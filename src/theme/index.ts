@@ -58,14 +58,17 @@ export const theme = {
   breakpoint: reduce(
     keys(breakpoints),
     (accumulator, label) => {
-      accumulator[label] = (...args) => css`
+      accumulator[label] = (
+        literals: TemplateStringsArray,
+        ...args: any[]
+      ) => css`
         @media (max-width: ${breakpoints[label]}px) {
-          ${css(...args)};
+          ${css(literals, ...args)};
         }
       `
       return accumulator
     },
-    {}
+    {} as any
   ),
   textStyles: {
     body1: {

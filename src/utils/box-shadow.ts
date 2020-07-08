@@ -1,4 +1,4 @@
-const boxShadow = depth => {
+const boxShadow = (depth: number) => {
   if (depth === 0) {
     // Shadow 0dp
     return `

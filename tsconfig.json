@@ -16,6 +16,6 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "exclude": ["node_modules", "build", "src/**/*.stories.tsx"],
+  "exclude": ["node_modules", "build"],
   "include": ["**/*.ts", "**/*.tsx"]
 }

@@ -19,7 +19,15 @@ export default {
       format: 'esm'
     }
   ],
-  external: ['styled-components'],
+  external: [
+    'global',
+    'lodash',
+    'polished',
+    'react-kawaii',
+    'react-loadingg',
+    'styled-components',
+    'styled-reset'
+  ],
   plugins: [
     peerDepsExternal(),
     resolve({ extensions }),

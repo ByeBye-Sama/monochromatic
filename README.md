@@ -32,7 +32,7 @@
 Install Monochromatic UI via npm.
 
 ```bash
-npm install @monochromatic-ui
+npm install @monochromatic-ui/core
 ```
 
 Load Maven Pro font.
@@ -53,7 +53,7 @@ Just import the component you want to use.
 
 ```jsx
 import React from 'react';
-import { Button } from '@monochromatic-ui/components';
+import { Button } from '@monochromatic-ui/core';
 
 function App() {
   return <Button>Hello World</Button>;

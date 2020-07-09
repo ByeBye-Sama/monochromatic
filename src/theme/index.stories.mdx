@@ -5,13 +5,13 @@ import * as stories from './index.stories.tsx'
 
 # Theme
 
-<p style={{fontSize: '22px'}}>Monochromatic UI utilities for styles.</p>
+<p style={{fontSize: '22px'}}>Monochromatic UI utilities for styles and theming.</p>
 <br/>
 
 ## palette
 
 **Monochromatic UI** as the name says is based on one primary color, 
-other colors in the palette are modifications from `primary`.
+other colors in the palette are modifications of `primary`.
 
 <Story name="palette" >{stories.Palette()}</Story>
 
@@ -22,10 +22,27 @@ other colors in the palette are modifications from `primary`.
 To use just import `theme` and select one of the options of `palette` 
 (`primary`, `tint1`, `tint2`, `tint3`, `shade1`, `shade2`, `shade3`, `white`,`black`,`primary00`,`primary25`,`primary50`,`primary75`).
 
+With `inline style`:
+
+```
+import React from 'react'
+import { theme } from '@monochromatic-ui/core'
+
+const Component = () => {
+  return(
+    <div style={{ background: ${theme.palette.primary}, color: ${theme.palette.black} }} />
+  )
+}
+
+export default Component
+```
+
+With `styled-components`:
+
 ```
 import React from 'react'
 import styled from 'styled-components'
-import { theme } from '@monochromatic-ui/theme'
+import { theme } from '@monochromatic-ui/core'
 
 const Component = styled.div`
   background: ${theme.palette.primary};
@@ -35,7 +52,7 @@ const Component = styled.div`
 export default Component
 ```
 
-#### Customization
+#### Theming
 
 To change the `primary` color of palette, you just need to assign a new one. 
 You can make this on the `root` of your project. Remember that assigning a new color 
@@ -45,7 +62,7 @@ Of course you can still overwrite the classes manually or maybe have one color i
 
 ```jsx
 import React from 'react'
-import { theme } from '@monochromatic-ui/theme'
+import { theme } from '@monochromatic-ui/core'
 
 theme.palette.primary = '#000000'
 
@@ -70,7 +87,7 @@ To use just import `theme` and select one of the options of `textStyle`
 ```
 import React from 'react'
 import styled from 'styled-components'
-import { theme } from '@monochromatic-ui/theme'
+import { theme } from '@monochromatic-ui/core'
 
 const Component = styled.p`
   ${theme.textStyle('h1')}
@@ -79,7 +96,7 @@ const Component = styled.p`
 export default Component
 ```
 
-#### Customization
+#### Theming
 
 Same as `pallete` if you want to modify `textStyle` you need to assign a 
 new `textStyles` object on root. Even if you only want to modify a particular property, 
@@ -88,7 +105,7 @@ If you change the `font-family` don't forget to add it to your project
 
 ```jsx
 import React from 'react'
-import { theme } from '@monochromatic-ui/theme'
+import { theme } from '@monochromatic-ui/core'
 
 theme.textStyles: {
   body1: {
@@ -163,7 +180,7 @@ To use just import `theme` and use a number.
 ```
 import React from 'react'
 import styled from 'styled-components'
-import { theme } from '@monochromatic-ui/theme'
+import { theme } from '@monochromatic-ui/core'
 
 const Component = styled.div`
   height: ${theme.spacing(10)};
@@ -186,7 +203,7 @@ To use just import `theme` and use integers from `0` to `10`, if it is `0` it wi
 ```
 import React from 'react'
 import styled from 'styled-components'
-import { theme } from '@monochromatic-ui/theme'
+import { theme } from '@monochromatic-ui/core'
 
 const Component = styled.div`
   ${theme.boxShadow(2)}
@@ -209,7 +226,7 @@ To use just import `theme` and choose one of the breakpoint options (`xs`, `sm`,
 ```
 import React from 'react'
 import styled from 'styled-components'
-import { theme } from '@monochromatic-ui/theme'
+import { theme } from '@monochromatic-ui/core'
 
 const Component = styled.div`
   background: ${theme.palette.primary};
@@ -223,7 +240,7 @@ const Component = styled.div`
 export default Component
 ```
 
-#### Customization
+#### Theming
 
 If you want to change breakpoints you can make it assigning new ones on root, 
 just remember to use the whole object. Also this change will modify how `Hidden` 
@@ -231,7 +248,7 @@ component is display.
 
 ```jsx
 import React from 'react'
-import { breakpoints } from '@monochromatic-ui/theme'
+import { breakpoints } from '@monochromatic-ui/core'
 
 breakpoints = {
   xs: 360,
@@ -255,7 +272,7 @@ export default function App() {
 ```
 import React from 'react'
 import styled from 'styled-components'
-import { Button } from '@monochromatic-ui/components'
+import { Button } from '@monochromatic-ui/core'
 
 const CustomButton = styled(Button)`
   background: '#000';

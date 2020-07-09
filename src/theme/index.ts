@@ -32,7 +32,7 @@ const palette = {
   get shade3() {
     return shade(0.75, this.primary)
   },
-  black: 'rgba(0, 0, 0, 0.87)',
+  black: '#222222',
   get primary00() {
     return transparentize(1, this.primary)
   },

@@ -1,7 +1,7 @@
 import { css } from 'styled-components'
 import { isString, keys, reduce } from 'lodash'
 import { tint, shade, transparentize } from 'polished'
-import { boxShadow } from 'utils'
+import boxShadow from 'utils/box-shadow'
 
 export const breakpoints = {
   xs: 360,
@@ -32,7 +32,7 @@ const palette = {
   get shade3() {
     return shade(0.75, this.primary)
   },
-  black: 'rgba(0, 0, 0, 0.87)',
+  black: '#222222',
   get primary00() {
     return transparentize(1, this.primary)
   },
@@ -58,14 +58,17 @@ export const theme = {
   breakpoint: reduce(
     keys(breakpoints),
     (accumulator, label) => {
-      accumulator[label] = (...args) => css`
+      accumulator[label] = (
+        literals: TemplateStringsArray,
+        ...args: any[]
+      ) => css`
         @media (max-width: ${breakpoints[label]}px) {
-          ${css(...args)};
+          ${css(literals, ...args)};
         }
       `
       return accumulator
     },
-    {}
+    {} as any
   ),
   textStyles: {
     body1: {

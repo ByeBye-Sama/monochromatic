@@ -68,7 +68,7 @@ const resolvePosition = (props: LoadingProps) => {
   `
 }
 
-const Container = styled.div`
+const Container = styled.div<LoadingProps>`
   height: ${theme.spacing(5)};
   position: relative;
   width: ${theme.spacing(5)};

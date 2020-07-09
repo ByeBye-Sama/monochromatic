@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "build",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "baseUrl": "src",
-    "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
     "forceConsistentCasingInFileNames": true,
@@ -15,6 +16,6 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "build"],
   "include": ["**/*.ts", "**/*.tsx"]
 }

@@ -1,7 +1,7 @@
 import React, { HTMLAttributes } from 'react'
 import styled from 'styled-components'
 import { theme } from 'theme'
-import { Box } from 'components'
+import Box from 'components/box'
 
 interface CardActions extends HTMLAttributes<HTMLDivElement> {
   position: string

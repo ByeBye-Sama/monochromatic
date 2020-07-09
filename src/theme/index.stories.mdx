@@ -26,7 +26,7 @@ With `inline style`:
 
 ```
 import React from 'react'
-import { theme } from '@monochromatic-ui/core'
+import { theme } from 'monochromatic-ui'
 
 const Component = () => {
   return(
@@ -42,7 +42,7 @@ With `styled-components`:
 ```
 import React from 'react'
 import styled from 'styled-components'
-import { theme } from '@monochromatic-ui/core'
+import { theme } from 'monochromatic-ui'
 
 const Component = styled.div`
   background: ${theme.palette.primary};
@@ -62,7 +62,7 @@ Of course you can still overwrite the classes manually or maybe have one color i
 
 ```jsx
 import React from 'react'
-import { theme } from '@monochromatic-ui/core'
+import { theme } from 'monochromatic-ui'
 
 theme.palette.primary = '#000000'
 
@@ -87,7 +87,7 @@ To use just import `theme` and select one of the options of `textStyle`
 ```
 import React from 'react'
 import styled from 'styled-components'
-import { theme } from '@monochromatic-ui/core'
+import { theme } from 'monochromatic-ui'
 
 const Component = styled.p`
   ${theme.textStyle('h1')}
@@ -105,7 +105,7 @@ If you change the `font-family` don't forget to add it to your project
 
 ```jsx
 import React from 'react'
-import { theme } from '@monochromatic-ui/core'
+import { theme } from 'monochromatic-ui'
 
 theme.textStyles: {
   body1: {
@@ -180,7 +180,7 @@ To use just import `theme` and use a number.
 ```
 import React from 'react'
 import styled from 'styled-components'
-import { theme } from '@monochromatic-ui/core'
+import { theme } from 'monochromatic-ui'
 
 const Component = styled.div`
   height: ${theme.spacing(10)};
@@ -203,7 +203,7 @@ To use just import `theme` and use integers from `0` to `10`, if it is `0` it wi
 ```
 import React from 'react'
 import styled from 'styled-components'
-import { theme } from '@monochromatic-ui/core'
+import { theme } from 'monochromatic-ui'
 
 const Component = styled.div`
   ${theme.boxShadow(2)}
@@ -226,7 +226,7 @@ To use just import `theme` and choose one of the breakpoint options (`xs`, `sm`,
 ```
 import React from 'react'
 import styled from 'styled-components'
-import { theme } from '@monochromatic-ui/core'
+import { theme } from 'monochromatic-ui'
 
 const Component = styled.div`
   background: ${theme.palette.primary};
@@ -248,7 +248,7 @@ component is display.
 
 ```jsx
 import React from 'react'
-import { breakpoints } from '@monochromatic-ui/core'
+import { breakpoints } from 'monochromatic-ui'
 
 breakpoints = {
   xs: 360,
@@ -272,7 +272,7 @@ export default function App() {
 ```
 import React from 'react'
 import styled from 'styled-components'
-import { Button } from '@monochromatic-ui/core'
+import { Button } from 'monochromatic-ui'
 
 const CustomButton = styled(Button)`
   background: '#000';
